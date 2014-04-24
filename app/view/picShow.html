@@ -1,0 +1,26 @@
+<div id="picShow" ontouchmove="event.preventDefault()">
+    <block tpl-id="pic-container">
+        <div id="pic_show_container" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {{#each picUrl}}
+                {{#if this.isActive}}
+                <div class="item active" data-id="{{this.index}}"><img src="{{this.url}}" style="width:100%"/></div>
+                {{else}}
+                <div class="item" data-id="{{this.index}}"><img src="{{this.url}}" style="width:100%"/></div>
+                {{/if}}
+                {{/each}}
+            </div> 
+        </div>
+            <ol class="carousel-indicators">
+                {{#each picUrl}}
+                {{#if this.isActive}}
+                <li data-target="#pic_show_container" 
+                    data-slide-to="{{this.index}}" class="active"></li>
+                {{else}}
+                <li data-target="#pic_show_container" 
+                    data-slide-to="{{this.index}}"></li>
+                {{/if}}
+                {{/each}}
+            </ol>
+    </block>
+</div>

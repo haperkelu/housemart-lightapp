@@ -1,0 +1,17 @@
+<div id="gaodeMap"></div>
+{{> header}}
+
+<label id="locationPlate"></label>
+<a id="nearbyButton"><img src="../assets/img/nearicon.png" alt="附近"/></a>
+<a id="searchButton"><img src="../assets/img/bt_search.png" alt="搜索"/></a>
+<a id="enquiry-history-button">
+	<img src="../assets/img/bt_dialogue.png" alt="问询历史"/>
+</a>
+
+<block tpl-id="count">
+{{#compare count 0}}
+{{else}}
+<span id="count-badge" class="badge">{{count}}</span>
+{{/compare}}
+</block>
+

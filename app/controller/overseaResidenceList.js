@@ -37,7 +37,7 @@ App.overseaFetch = sumeru.controller.create(function(env, session){
             env.subscribe("pubOverseaList", regionId, plateId, pageNo, pageSize, function(list){
                 session.bind('residenceList', {data: list.find()});
             });
-            env.subscribe("allLocationList", cityId, function(list){
+            env.subscribe("pubAllLocationList", cityId, function(list){
                 session.bind('locationSet', {data: list.find()});
                 list.find({regionId:regionId}, function(error, items) {
                     var targetRegion = items[0];

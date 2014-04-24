@@ -1,0 +1,126 @@
+<div id="residenceOnSell">
+<div class='loadingDiv'>
+     <img src="../assets/img/loading.gif"/>
+</div>
+<div id='sale_sold_bg'></div>
+<block tpl-id="residence-container">
+{{$ document.title=residenceName+'('+count+'套)'}}
+<div class="banner">
+    <div class="header">
+        <a class="back">
+            <img src="../assets/img/reback_icon.png"/>
+        </a>
+        <a class='info' id="house-detail-icon">
+            <img src="../assets/img/house_detail_icon.png"/>
+        </a>
+    </div>
+    <div class='sub'>
+        {{#if soldHistory}}
+        {{residenceName}}
+        {{else}}
+        {{residenceName}}<span id='hl_saleCount'>({{count}})</span>
+        {{/if}}
+    </div>
+</div>
+
+{{#compare saleRentType "==" "rent"}}
+<div id="on_rent_title">小区在租房</div>
+{{else}}
+<div id='sale_sold'>
+    <ul>
+      <li class='active'><a id="sale">在售房屋</a></li>
+      <li><a id="sold">成交历史</a></li>
+    </ul>
+</div>
+<div id="sale_sold_all_bg"></div>
+{{/compare}}
+
+<div id="onsell-content">
+    {{#if soldHistory}}
+    {{else}}
+	<div ontouchmove="event.preventDefault()" id="residence-onsell-houses" class="carousel slide" 
+			data-ride="carousel">
+		<ol class="carousel-indicators">
+			{{#each picURLs}}
+			{{#if this.first}}
+    		<li data-target="#residence-onsell-houses" 
+    			data-slide-to="{{this.index}}" class="active"></li>
+    		{{else}}
+    		<li data-target="#residence-onsell-houses" 
+    			data-slide-to="{{this.index}}"></li>
+    		{{/if}}
+			{{/each}}
+		</ol>
+
+        <div class="carousel-inner">
+            {{#compare picURLs.length 0}}
+            <div class="item active"><img/></div>
+            {{else}}
+                {{#each picURLs}}
+                    {{#if this.first}}
+                    <div class="item active"><img src="{{this.url}}"/></div>
+                    {{else}}
+                    <div class="item"><img src="{{this.url}}"/></div>
+                    {{/if}}
+                {{/each}}
+            {{/compare}}
+  		</div>
+    </div>
+    {{/if}}
+	{{#compare houseList.length 0}}
+    <div class="houses no-house">
+        {{#compare saleRentType "==" "rent"}}
+        <p class='empty rent'>没有在租房</p>
+        {{else}}
+            {{#if soldHistory}}
+            <p class='empty sold'>没有成交历史</p>
+            {{else}}
+            <p class='empty sale'>没有在售房</p>
+            {{/if}}
+        {{/compare}} 
+	</div>
+	{{ else }}
+    <div class="houses">
+        {{#compare saleRentType "==" "rent"}}
+        {{> house_rent}}
+        {{else}}
+            {{#if soldHistory}}
+            {{> house_sold}}
+            {{else}}
+            {{> house_sale}}
+            {{/if}}
+        {{/compare}}
+        {{#compare totalCount ">" houseList.length}}
+        <div style="width:100%;height:95px;"><button id='load-more'>加载更多</button></div>
+        {{else}}
+        {{/compare}}
+	</div>
+</div>
+
+<div class="sortbar">
+	<span>排序</span>
+</div>
+
+<div id="allsorts" style="display: none">
+	<h5>排序</h5>
+    {{#compare saleRentType "==" "sale"}}
+        <button id="sort-time">时间</button>
+        <button id="sort-total">总价</button>
+        <button id="sort-per">单价</button>
+        <button id="sort-area">面积</button>
+        <button id="sort-cancel">取消</button>
+    {{else}}
+        <button id="sort-time">时间</button>
+        <button id="sort-rent">租金</button>
+        <button id="sort-area">面积</button>
+        <button id="sort-cancel">取消</button>
+    {{/compare}}
+</div>
+<div class="modal-backdrop" style="display: none">
+</div>
+{{/compare}}
+{{$ Library.utils.changeElClass($('.loadingDiv'));}}
+</block>
+
+
+</div>

@@ -1,0 +1,71 @@
+<div id="residenceSearch">
+<div class='loadingDiv'>
+  <img src="../assets/img/loading.gif"/>
+</div>
+<div class='banner'>
+    <div class='header'>
+		<div class='input-wrap'>
+        <form>
+		<input id="searchResidenceInput" type="search" 
+				placeholder="搜索小区名称" />
+        </form>
+		</div>
+		<button id="cancel">取消</button>
+	</div>
+</div>
+
+<block tpl-id="list">
+{{#compare data.length 0}}
+<p class='empty'>没有符合条件的搜索记录</p>
+{{$ $('.loadingDiv').css('display','none'); }}
+{{else}}
+<div class="residences">
+    {{#compare saleRent "==" "sale"}}
+        {{#each data}}
+        <div class='residence-wrap' data-id="{{this.residenceId}}" data-name="{{this.residenceName}}" data-sale="{{this.onSaleCount}}" data-rent="{{this.onRentCount}}">
+            <div class='residence'>
+                <img src="{{this.picURL.[0]}}"/>
+                <div class='info'>
+                    <div class="details">
+                        <span class="highlight">{{this.residenceName}}</span>
+                    </div>
+                    <div class="details"> 
+                      <span class="detail" style="width:100%">均价: <span class="highlight"> {{this.price}}</span></span>
+                    </div>
+                    <div class='details last'>
+                        <span class="detail">
+                            在售: {{this.onSaleCount}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    {{else}}
+        {{#each data}}
+        <div class='residence-wrap' data-id="{{this.residenceId}}" data-name="{{this.residenceName}}" data-sale="{{this.onSaleCount}}" data-rent="{{this.onRentCount}}">
+            <div class='residence'>
+                <img src="{{this.picURL.[0]}}"/>
+                <div class='info'>
+                    <div class="details">
+                        <span class="highlight">{{this.residenceName}}</span>
+                    </div>
+                    <div class="details"> 
+                      <span class="detail" style="width:100%">租金: <span class="highlight"> {{this.rentPrice}}</span></span>
+                    </div>
+                    <div class='details last'>
+                        <span class="detail">
+                            在租: {{this.onRentCount}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    {{/compare}}
+</div>
+{{$ $('.loadingDiv').css('display','none'); }}
+{{/compare}}
+</block>
+
+</div>

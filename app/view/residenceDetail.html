@@ -1,0 +1,176 @@
+<div id="residence-onsell-detail">
+<div class='loadingDiv'>
+     <img src="../assets/img/loading.gif"/>
+</div>
+<block tpl-id="residence-onsell-detail">
+{{$ document.title=data.residenceName+','+data.priceRange+'万'+','+data.address}}
+<div class="banner">
+	<div class="header">
+		<a class="back">
+			<img src="../assets/img/reback_icon.png"/>
+		</a>
+		小区详情
+	</div>
+</div>
+
+<div class='content'>
+	<div ontouchmove="event.preventDefault()" id="residence-detail-images" class="carousel slide" 
+			data-ride="carousel">
+		<ol class="carousel-indicators">
+			{{#each data.picURLWithSize}}
+            {{#if this.first}}
+    		<li data-target="#residence-detail-images" 
+                data-slide-to="{{this.index}}" class="active"></li>
+    		{{else}}
+    		<li data-target="#residence-detail-images" 
+                data-slide-to="{{this.index}}"></li>
+    		{{/if}}
+			{{/each}}
+		</ol>
+
+		<div class="carousel-inner">
+			{{#each data.picURLWithSize}}
+				{{#if this.first}}
+    			<div class="item active"><img src="{{this.url}}"/>
+    			</div>
+    			{{else}}
+    			<div class="item"><img src="{{this.url}}"/></div>
+    			{{/if}}
+			{{/each}}
+  		</div>
+	</div>
+	<div class="statistics">
+		<p class='hl' style="font-weight: bold;color: #519cf3;padding: 5px">
+			{{data.residenceName}}
+			&nbsp;&nbsp;
+			<span style="font-size: 12px;color: #fff;font-weight: normal;">均价: {{data.price}}</span>
+		</p>
+		<div id="line-chart"></div>
+	</div>
+
+	<div class="info-pane">
+		<div class="details">
+			<div class='detail'>
+				<span class='prop'>年度涨幅</span>
+				<span class="value">{{data.annualPriceIncreasement}}</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail'>
+				<span class='prop'>年换手率</span>
+				<span class="value">{{data.annualTurnoverRate}}</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail'>
+				<span class='prop'>租金回报</span>
+				<span class="value">{{data.rentRevenue}}</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail'>
+				<span class='prop'>在售房屋</span>
+				<span class="value">{{data.onSaleCount}}套</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail' style="width: 100%">
+				<span class='prop'>售价范围</span>
+				<span class="value">{{data.priceRange}}万</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail'>
+				<span class='prop'>上月成交</span>
+				<span class="value">{{data.lastMonthDealCount}}套
+				</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail'>
+				<span class='prop'>在租房屋</span>
+				<span class="value">{{data.onRentCount}}套</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail' style="width: 100%">
+				<span class='prop'>租金范围</span>
+				<span class="value">{{data.rentRange}}元/月</span>
+			</div>
+		</div>
+		<div class="sketch">
+			<div class="title"> 小区概况:
+			</div>
+			<div class='info'>
+				<div class="details" style="margin-top: 0px; padding-left:0">
+					<div class='detail'>
+						<span class='prop' style="width: 50px;">总户数</span>
+						<span class="value">
+							{{data.houseHold}}
+						</span>
+					</div>
+					<div class='detail'>
+						<span class='prop' style="width: 50px;">绿化率</span>
+						<span class="value">
+							{{data.greenRate}}
+						</span>
+					</div>
+				</div>		
+				<div class="details" style="padding-left:0">
+					<div class='detail'>
+						<span class='prop' style="width: 50px;">停车位</span>
+						<span class="value">
+							{{data.parking}}
+						</span>
+					</div>
+					<div class='detail'>
+						<span class='prop' style="width: 50px;">容积率</span>
+						<span class="value">
+							{{data.volumnRate}}
+						</span>
+					</div>
+				</div>		
+				<div class="details" style="padding-left:0">
+					<div class='detail'>
+						<span class='prop' style="width: 50px;">类&nbsp;&nbsp;&nbsp;型</span>
+						<span class="value">
+							{{data.type}}
+						</span>
+					</div>
+					<div class='detail'>
+						<span class='prop' style="width: 50px;">物业费</span>
+						<span class="value">
+							{{data.propertyFee}}
+						</span>
+					</div>
+				</div>
+				<div class="details" style="padding-left:0">
+					<div class='detail' style="width: 100%">
+						<span class='prop' style="width: 50px;">开发商</span>
+						<span class="value">
+							{{data.developer}}
+						</span>
+					</div>
+				</div>
+				<div class="details" style="padding-left:0">
+					<div class='detail' style="width: 100%">
+						<span class='prop'>竣工时间</span>
+						<span class="value">
+							{{data.finishedTime}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="details">
+			<div class='detail' style="width: 100%;">
+				<span class='prop'>小区地址</span>
+				<span class="value">{{data.address}}</span>
+			</div>
+		</div>
+	</div>
+</div>
+{{$ Library.utils.changeElClass($('.loadingDiv'));}}
+</block>
+
+</div>
