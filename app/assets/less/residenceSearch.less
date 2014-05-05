@@ -1,0 +1,96 @@
+@import "../../../bower_components/bootstrap/less/variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+@import "base.less";
+
+#residenceSearch {
+	background-color: @bg-color;
+	min-height: 100%;
+
+    .loadingDiv {
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        img {
+            width:60px;
+            height:60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -30px;
+            margin-top: -30px;
+        }
+    }
+
+	.banner {
+
+		.header {
+			padding: 5px;
+			@search-button-width: 50px;
+			@gutter: 10px;
+			position: relative;
+
+			.input-wrap {
+				margin-right: @search-button-width + @gutter;
+				input[type=search] {
+					@padding-top: 8px;
+					@padding-bottom: @padding-top;
+					@padding-right: 12px;
+					@search-img-width: 20px;
+					@padding-left: @padding-right + @search-img-width;
+					background: url(/assets/img/searchbox_icon.png) 7px center no-repeat #fff;
+					padding: @padding-top @padding-right @padding-bottom @padding-left;
+					outline: none;
+					line-height: @line-height-computed;
+					font-size: @font-size-base;
+					border-radius: @line-height-computed / 2 + @padding-top;
+					border: none;
+					width: 100%;
+					box-shadow: inset 0px 2px 3px rgba(0, 0, 0, .3);
+				}
+			}
+
+			button {
+				position: absolute;
+				border: none;
+				right: 7px;
+				top: 7px;
+				.button-variant(#fff; @bg-color; @bg-color);
+				.button-size(5px; 12px; @font-size-base; @line-height-base; 4px);
+				.box-shadow(0px 1px 2px rgba(0, 0, 0, .5));
+				#gradient > .vertical(lighten(@bg-color, 10%), @bg-color);
+			}
+		}
+	}
+
+	.residences {
+		z-index: @banner-index - 1;
+		position: absolute;
+		top: 50px;
+		bottom: 0px;
+		padding: 10px;
+		width: 100%;
+		overflow: auto;
+
+		.details {
+			padding: 1px 0px;
+            font-size: 14px;
+            
+            .detail {
+                width: 100%;
+                text-overflow: ellipsis;
+                white-space:nowrap;
+                overflow: hidden;
+                    
+                .highlight {
+                    font-size: 14px;    
+                }
+
+            }
+		}
+	}
+}

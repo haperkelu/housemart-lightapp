@@ -1,0 +1,233 @@
+NON BAE MODE     at Object.<anonymous> (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/build/build.js:37:12)
+
+build from :/Users/user/https:/github.com/haperkelu/housemart-lightapp/     at Object.<anonymous> (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/build/build.js:48:8)
+to :/Users/user/https:/github.com/haperkelu/housemart-lightapp/app     at Object.<anonymous> (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/build/build.js:49:8)
+
+node start,running checking bae version:0     at Object.<anonymous> (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:24:4)
+
+runing [NetMessage] in server     at runnable (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/netMessage.js:553:8)
+
+1ce762b83efb342651fa87ec68407e1ff119e61f
+
+SockJS v0.3.8 bound to "/socket"
+
+Server Listening on 8080     at Server.<anonymous> (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:391:12)
+
+GET /socket/info 5ms 200
+
+GET /socket/589/6gj2xl_f/websocket 2ms (unfinished)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H"} ] target: Client_Connection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+============================================= verify  ================     at _extend.__verify (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/clientTracer.js:237:12)
+
+register socket, id:b0xt0ncwaw     at netMessage.setReceiver.onMessage.handle (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:644:20)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"b0xt0ncwaw"} ] target: Client_SocketConnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+send echo_from_server ok     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:675:28
+
+subscribe receiver..... auth-init      at subscribe_function (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:1072:12)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"b0xt0ncwaw"} ] target: Client_SocketDisconnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+socket disconnection, client 18mb9r78k_PDgKfP9hQZ9H, socket disconnection :b0xt0ncwaw Active Socket reg :0 Active Client : 1     at Object.clientTracer.__reg.client [as onSocketDisconnection] (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/clientTracer.js:442:10)
+
+create new : !     at Object.serverController (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1219:12)
+
+destory ["!"]TgGowGeE3Wv     at Object.fw.utils.extendFrom.server_destroy (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1329:16)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 mapSell     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+checkCache header undefined     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:276:56
+
+pre replace --- {{> header}}     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:289:64
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 header     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text header     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+GET /socket/info 1ms 200
+
+GET /socket/461/wa_ojwh1/websocket 2ms (unfinished)
+
+register socket, id:we8e6nddha     at netMessage.setReceiver.onMessage.handle (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:644:20)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"we8e6nddha"} ] target: Client_SocketConnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+send echo_from_server ok     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:675:28
+
+subscribe receiver..... auth-init      at subscribe_function (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:1072:12)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"we8e6nddha"} ] target: Client_SocketDisconnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+socket disconnection, client 18mb9r78k_PDgKfP9hQZ9H, socket disconnection :we8e6nddha Active Socket reg :0 Active Client : 1     at Object.clientTracer.__reg.client [as onSocketDisconnection] (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/clientTracer.js:442:10)
+
+create new : /mapSell!     at Object.serverController (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1219:12)
+
+destory ["/mapSell!"]TP3pIiZIMNC     at Object.fw.utils.extendFrom.server_destroy (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1329:16)
+
+create new : /mapSell!     at Object.serverController (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1219:12)
+
+destory ["/mapSell!"]TBGFy2lU1Gn     at Object.fw.utils.extendFrom.server_destroy (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1329:16)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 house_rent     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text house_rent     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment [ '<!--<div style="width:100%;height:42px;position:fixed;bottom:0;background-color:#4b4e59;z-index:0">-->' ]     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 houseDetail     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text houseDetail     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+create new : !     at Object.serverController (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1219:12)
+
+destory ["!"]T55FfmBjXvO     at Object.fw.utils.extendFrom.server_destroy (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/src/controller.js:1329:16)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 enquiryHistory     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text enquiryHistory     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 houseAddress     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text houseAddress     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 chat     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text chat     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 house_sale     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text house_sale     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 house_sold     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text house_sold     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 picShow     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text picShow     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 mapSell     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+checkCache header undefined     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:276:56
+
+pre replace --- {{> header}}     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:289:64
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 header     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text header     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 residenceSearch     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text residenceSearch     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 3 houseList     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+checkCache house_rent undefined     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:276:56
+
+checkCache house_sold undefined     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:276:56
+
+checkCache house_sale undefined     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:276:56
+
+pre replace --- {{> house_rent}}     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:289:64
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 house_rent     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text house_rent     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+pre replace --- {{> house_sold}}     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:289:64
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 house_sold     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text house_sold     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+pre replace --- {{> house_sale}}     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:289:64
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 house_sale     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+hit plain text house_sale     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 header     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text header     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 residenceDetail     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text residenceDetail     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 itworks     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text itworks     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+view remove comment null     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:215:40)
+
+branchNum 1 overseaList     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:235:40)
+
+hit plain text overseaList     at parsePartial (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/fileServer.js:239:44)
+
+GET /socket/info 0ms 200
+
+GET /socket/391/m5dol9h3/websocket 1ms (unfinished)
+
+register socket, id:dtwu4lylof     at netMessage.setReceiver.onMessage.handle (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:644:20)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"dtwu4lylof"} ] target: Client_SocketConnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+send echo_from_server ok     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:675:28
+
+subscribe receiver..... auth-init      at subscribe_function (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:1072:12)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"dtwu4lylof"} ] target: Client_SocketDisconnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+socket disconnection, client 18mb9r78k_PDgKfP9hQZ9H, socket disconnection :dtwu4lylof Active Socket reg :0 Active Client : 1     at Object.clientTracer.__reg.client [as onSocketDisconnection] (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/clientTracer.js:442:10)
+
+util.pump() is deprecated. Use readableStream.pipe() instead.
+
+GET /socket/info 0ms 200
+
+GET /socket/957/yjla4yws/websocket 0ms (unfinished)
+
+register socket, id:f00xuov4ge     at netMessage.setReceiver.onMessage.handle (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:644:20)
+
+default receiver: this message not have a clear receiver [  {"clientId":"18mb9r78k_PDgKfP9hQZ9H","socketId":"f00xuov4ge"} ] target: Client_SocketConnection     at default_receiver (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:114:8)
+
+send echo_from_server ok     at /Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:675:28
+
+subscribe receiver..... auth-init      at subscribe_function (/Users/user/https:/github.com/haperkelu/housemart-lightapp/sumeru/server/run.js:1072:12)
+

@@ -64,29 +64,25 @@ function runnable() {
 
     config['pubOverseaResidenceList'] = {
         
-    fetchUrl: function(regionId, plateId, pageNo, pageSize) {
-        return host + '/server/house/residenceSale/searchNew.controller?appCode=' + appCode +
-        '&cityId=2' + '&regionId=' + regionId + "&plateId=" + plateId + '&pageIndex=' + pageNo + '&pageSize=' + pageSize;
-    },
-    resolve: function(originData) {
-        var j = JSON.parse(originData);
-        var resolved = j['data'];
-        return resolved;
-    },
-    buffer: false
+        fetchUrl: function(cityId, regionId, plateId, pageNo, pageSize) {
+            return host + '/server/house/residenceSale/searchNew.controller?appCode=' + appCode +
+            '&cityId=' + cityId + '&regionId=' + regionId + "&plateId=" + plateId + '&pageIndex=' + pageNo + '&pageSize=' + pageSize;
+        },
+        resolve: function(originData) {
+            return JSON.parse(originData);
+        },
+        buffer: false
     }
     
     config['pubAllLocationList'] = {
-    fetchUrl: function(cityId) {
-        return host + 'server/locationAllList.controller?cityId=' + cityId;
-    },
-    resolve: function(originData) {
-        var j = JSON.parse(originData);
-        var resolved = j['data'];
-        return resolved;
-    },
-    buffer: false
-    }
+        fetchUrl: function(cityId) {
+            return host + '/server/locationAllList.controller?cityId=' + cityId;
+        },
+        resolve: function(originData) {
+            return JSON.parse(originData);
+        },
+        buffer: false
+     }
     
     return {
         type: 'external',

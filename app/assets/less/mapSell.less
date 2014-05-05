@@ -1,0 +1,269 @@
+@import "../../../bower_components/bootstrap/less/mixins.less";
+@import "base.less";
+
+	#map-sell-banner {
+		.header{
+			img {
+				display: block;
+				float: left;
+				max-height: 100%;
+			}
+	
+			#haoshimai {
+	    		float: left;
+	    		line-height: 30px;
+	    		font-size: @font-size-large;
+			}
+	
+			#area {
+	    		padding-left:20px;
+	    		line-height: 35px;
+	    		font-size: @font-size-base;
+	    		float: right;
+			}
+            
+            #sale_rent {
+                width:120px;
+                height:30px;
+                margin:auto;
+                border:1px solid #141518;
+                background-color:#3d4048;
+                border-radius: 15px;
+                
+                ul {
+                    list-style: none;
+                    
+                    li a{
+                        color: #c6c6c6;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+                    }
+	
+                    #on-sale {
+                        font-size: @font-size-base;
+                        line-height: 28px;
+                        position: relative;
+                        left: -40px;
+                        top: -32px;
+                        z-index:100;
+                        margin-right:16px;                   
+                        text-decoration:none; 
+                    }
+
+                    .active a{
+                        color: #fff;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+                    }
+
+                    #on-rent {
+                        font-size: @font-size-base;
+                        line-height: 28px;
+                        position: relative;
+                        z-index: 100;
+                        top: -2px;
+                        left:12px;
+                        margin-right:9px;
+                        text-decoration:none;
+                    }
+                }
+
+            }
+
+            #sale_rent_bg {
+                margin-top:2px;
+                position:relative;
+                left:-29px;
+                top:-28px;
+                margin: auto;
+                width:58px;
+                background: -webkit-linear-gradient(#5095e3, #4585cf); /* For Safari */
+                background: -o-linear-gradient(#5095e3, #4585cf); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(#5095e3, #4585cf); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(#5095e3, #4585cf); /* Standard syntax */
+                height:26px;
+                border-radius:15px;
+            }
+		}
+	
+		.sub {
+            z-index: 9999;            
+
+	    	ul {
+	 			padding-left:0;
+	    		margin:0px;   		
+	    		overflow: hidden;
+	    		list-style: none;
+	
+	    		li {
+	    			width: 25%;	
+	    			box-sizing: border-box;
+	    			padding: 0px;
+	    			float: left;
+	    			border-right: 1px solid #5f636a;
+	
+					&.active a {
+						color: #f47c00;
+					}
+	
+	    			a {
+	    				text-align: center;
+						color: #fff;
+						text-decoration: none;
+						cursor: pointer;
+						display: block;
+						padding: 5px 0px;
+	    			}
+	    		}
+	
+	    		li::last-child {
+	    			border-right: none;
+	    		}
+	    	}
+		}
+	}
+	
+	.content-marker {
+		padding: 12px;
+		background: url('/assets/img/openning_detail_back.png');
+		background-size: 100% 100%;
+		width: 300px;
+		height: 150px;
+		color: #fff;
+
+		img, .info {
+			float: left;
+		}
+	
+		img {
+			display: block;
+			width: 60px;
+			height: 60px;
+			margin-right: 10px;
+			border-radius: 7px;
+            background:url('/assets/img/nopic_default.png') no-repeat top left;
+            background-size: 100% 100%;
+		}
+	
+		.info p {
+            font-size: 12px;
+			margin-bottom: 5px;
+		}
+	}
+	
+	.marker-wrap {
+		position: absolute;
+	
+		&::after {
+			content: '';
+			.size(8px; 12px);
+			display: block;
+			background: url(/assets/img/flag_arrow.png) top center transparent;
+			position: relative;
+			left: 25px;
+			margin-top: -14px;
+            background-size: 100% 100%;
+		}
+	
+		.marker {
+			color: #fff;
+			white-space: nowrap;
+	
+			&::after, &::before, .content {
+				box-sizing: border-box;
+				display: inline-block;
+				vertical-align: top;
+				height: 38px;
+			}
+	
+			&::before, &::after {
+				content: '';
+				width: 9px;
+			}
+	
+			&::before {
+				background: url(/assets/img/flag_left.png) top center transparent;
+                background-size: 100% 100%;
+			}
+	
+			&::after {
+				background: url(/assets/img/flag_right.png) top center transparent;
+                background-size: 100% 100%;
+			}
+	
+			.content {
+				padding: 5px 3px;
+                font-size: 12px;
+				white-space: nowrap;
+				background: url(/assets/img/flag_middle.png) top center transparent;
+                background-size: 100% 100%;
+	
+				.name, .para {
+					display: inline-block;	
+				}
+	
+				.name {
+					border-right: 1px solid #7fb3ed;
+					padding-right: 5px;
+				}
+	
+				.para {
+					border-left: 2px solid #548ecd;
+					padding-left: 5px;
+				}
+			}
+		}
+	}
+
+#locationPlate {
+    font-size:12px;
+    line-height:11.5px;
+	position:fixed;
+	display: block;
+	bottom:20px;
+	left:60px;
+
+	height: 21px;
+	min-width: 100px;
+	padding: 5px 12px;
+	color: #fff;
+	width:auto;
+	border-radius: 15px;
+	background: rgba(0, 0, 0, .6);
+	//box-shadow: 0px 3px 5px rgba(0, 0, 0, .3);
+}
+
+#nearbyButton{
+	position:fixed;
+	bottom: 20px;
+	left: 10px;
+    img {
+        width:45px;
+        height:45px;
+    }
+}
+
+#searchButton{
+	position:fixed;
+	bottom: 20px;
+	right: 10px;
+    img {
+        width:45px;
+        height:45px;
+    }
+}
+
+#enquiry-history-button{
+	position:fixed;
+	bottom: 75px;
+	right: 10px;
+    img {
+        width:45px;
+        height:45px;
+    }
+}
+
+#count-badge{
+    position:fixed;
+    bottom: 110px;
+    right: 0px;
+    background-color:red;
+}

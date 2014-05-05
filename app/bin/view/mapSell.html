@@ -1,0 +1,40 @@
+<div id="gaodeMap"></div>
+<div id="map-sell-banner" class='banner'>
+    <div class="header">
+        <img src="../assets/img/icon.png" alt="好识买"/>
+        <div id="haoshimai">好识买</div>
+        <div id="area">上海</div>
+        <div id='sale_rent'>
+            <ul>
+              <li><a id="on-rent">出租房</a></li>
+              <li class="active"><a id="on-sale">出售房</a></li>
+            </ul>
+        </div>
+        <div id='sale_rent_bg'></div>
+    </div>
+    <div class="sub">
+      <ul>
+        <li class='active'>
+            <a id="annualPriceIncreasement">年度涨幅</a>
+        </li>
+	    <li><a id="price">小区均价</a></li>
+        <li><a id="annualTurnoverRate">年换手率</a></li>
+        <li><a id="rentRevenue">租金回报</a></li>
+      </ul>
+    </div>
+</div>
+
+
+<label id="locationPlate"></label>
+<a id="nearbyButton"><img src="../assets/img/nearicon.png" alt="附近"/></a>
+<a id="searchButton"><img src="../assets/img/bt_search.png" alt="搜索"/></a>
+<a id="enquiry-history-button">
+	<img src="../assets/img/bt_dialogue.png" alt="问询历史"/>
+</a>
+
+<block tpl-id="count">
+{{#compare count 0}}
+{{else}}
+<span id="count-badge" class="badge">{{count}}</span>
+{{/compare}}
+</block>

@@ -13,7 +13,7 @@ sumeru.router.setDefault('App.mapSell');
 //map_register ok表示已注册
 
 App.mapSell = sumeru.controller.create(function(env, session) {
-    
+
     var host = sumeru.config.get("dataServerHost"); //host地址
     var appCode = 'baiduClient';
     var hasToast = false;//每个页面都需要一个toast
@@ -25,12 +25,15 @@ App.mapSell = sumeru.controller.create(function(env, session) {
     var count = 0;
 
 	env.onrender = function(doRender) {
+        console.log('onreader');
         doRender('mapSell',['none','z']);
 	};
 
 	env.onready = function() {
+        console.log('onready');
+        console.log(clientUId);
         var clientUId = Library.utils.getClientId();
-
+        console.log(clientUId);
         //初始化toast
         Library.utils.toastrInit();
         //Library.utils.clearBaiduIcon();

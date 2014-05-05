@@ -6,8 +6,10 @@ sumeru.packages(
 	'houseDetail.js',
 	'houseAddress.js',
 	'chat.js',
-    	'enquiryHistory.js',
-    	'picShow.js',
-	'overseaResidenceList'
+    'enquiryHistory.js',
+    'picShow.js',
+	'overseaResidenceList.js',
+    'overseaCitySelection.js',
+    'overseaRegionSelection.js'
 )
 

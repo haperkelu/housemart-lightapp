@@ -1,0 +1,26 @@
+CACHE MANIFEST 
+#version:1399291266985
+CACHE:
+sumeru.css
+sumeru.js
+app.js
+/view/chat.html
+/view/enquiryHistory.html
+/view/header.html
+/view/houseAddress.html
+/view/houseDetail.html
+/view/houseList.html
+/view/house_rent.html
+/view/house_sale.html
+/view/house_sold.html
+/view/itworks.html
+/view/mapSell.html
+/view/overseaCitySelection.html
+/view/overseaRegionSelection.html
+/view/overseaResidenceList.html
+/view/picShow.html
+/view/regionSelection.html
+/view/residenceDetail.html
+/view/residenceSearch.html
+NETWORK:
+*

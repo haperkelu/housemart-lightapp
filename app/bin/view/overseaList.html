@@ -1,0 +1,81 @@
+<block tpl-id="overSeaResidenceContainer">
+
+    <div id="map-sell-banner" class='banner'>
+        <div class="header">
+            <img src="../assets/img/icon.png" alt="好识买"/>
+            <div id="haoshimai">好识买</div>
+            <div id="area">{{cityName}}}</div>
+        </div>
+    </div>
+
+    
+    <div class='loadingDivision'>
+        <img src="../assets/img/loading.gif"/>
+    </div>
+
+    <div id="currentRegion"> {{regionName}}}</div>
+    <div id="currentPlate"> {{plateName}}}</div>
+    
+
+    <div id="mainContent">
+        <block tpl-id="residenceList">
+            {{#each data}}
+            <div class='residence-wrap' data-id="{{this.residenceId}}" data-name="{{this.residenceName}}" data-sale="{{this.onSaleCount}}" data-rent="{{this.onRentCount}}">
+                <div class='residence'>
+                    <img src="{{this.picURL.[0]}}"/>
+                    <div class='info'>
+                        <div class="details">
+                            <span class="highlight">{{this.residenceName}}</span>
+                        </div>
+                        <div class="details">
+                            <span class="detail" style="width:100%">均价: <span class="highlight"> {{this.price}}</span></span>
+                        </div>
+                        <div class='details last'>
+                        <span class="detail">
+                            在售: {{this.onSaleCount}}
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </block>
+    </div>
+
+    <div id="locationPanel">
+        <table>
+            <tr>
+                <td id="cityList">
+                    <div>
+                        南加州
+                    </div>
+                    <div>
+                        北加州
+                    </div>
+                </td>
+                <td id="regionList">
+
+                    {{#each locationSet}}
+                        <div>{{this.regionName}}</div>
+                    {{/each}}
+
+                </td>
+                <td id="plateList">
+                    <table>
+                        {{#each locationSet}}
+                            <tr>
+                            {{#each this.plateList}}
+                                <td>{{this.name}}</td>
+                            {{/each}}
+                            </tr>
+                        {{/each}}
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</block>
+
+

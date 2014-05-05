@@ -1,0 +1,214 @@
+@import "../../../bower_components/bootstrap/less/variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+
+@banner-header-height: @navbar-height;
+@banner-padding: 10px;
+@bg-color: #4b4e59;
+@banner-index: @zindex-navbar;
+
+a[href="http://tongji.baidu.com/hm-web/welcome/ico?s=8219f44b51d2c77305d20385ea4962ba"] {
+    display: none;
+}
+
+.banner {
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: @banner-index;
+
+	.header {
+		height: @banner-header-height;
+		padding: @banner-padding;
+		font-size: @font-size-large;
+        font-weight: bold;
+		line-height: @banner-header-height - @banner-padding * 2;
+		z-index: @banner-index + 2;
+		position: relative;
+		text-align: center;
+		background:url('/assets/img/title.png') 100% 100%;
+		.box-shadow(0px 2px 4px rgba(0, 0, 0, .6));
+
+    	.nav-btn() {
+    		.square(@banner-header-height - @banner-padding * 2);
+			top: @banner-padding;
+    		position: absolute;
+
+    		img {
+    			max-width: 100%;
+    			max-height: 100%;
+    		}
+    	}
+
+    	.info {
+			.nav-btn();
+			right: @banner-padding;
+    	}
+
+    	.back {
+    		.nav-btn();	
+    		left: @banner-padding;
+    	}
+	}
+
+	.sub {
+		z-index: @banner-index + 1;
+		position: relative;
+		color: #fff;
+		background-color:#494c56;
+	}
+}
+
+.haoshimai-overlay {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+
+.residence-wrap {
+    height: 80px;
+	box-shadow: 0px 0px 8px #000;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	#gradient > .vertical(#fff, #e9e9e9);
+	
+	.residence {
+		border-radius: 5px;
+		box-shadow: inset 0px 0px 3px #fff;
+		position: relative;
+		padding: 5px;
+		overflow: hidden;
+		
+		img:not(.sold_pic){
+			position: absolute;
+			border-radius: 5px;
+			width: 70px;
+			height: 70px;
+			left: 5px;
+			top: 5px;
+            background:url('/assets/img/default_cover_small.png') no-repeat top left;
+            background-size: 100% 100%;
+		}
+
+        .sold_pic {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 45px;
+            top: 15px;
+            z-index: 100;
+        }
+		
+		.highlight {
+            font-size: 15px;
+			color: #08c;
+		}
+		
+		.info {
+			margin-left: 80px;
+			.details {
+				margin-bottom: 3px;
+				overflow: hidden;
+				.detail {
+					display: block;
+					float: left;
+					width: 45%;
+				}
+
+				&.last {
+                    font-size:13px;
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+}
+
+.resident-wrap:last-child {
+	margin-bottom: 0px;
+}
+
+.empty {
+	@empty-height: 25px;
+	color: #2b2d30;
+	//background: url(/assets/img/search_noresult.png) left center no-repeat transparent;
+	//background-size: @empty-height @empty-height;
+	position: absolute;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+
+	margin-top: -@empty-height/2;
+	top: 50%;
+    
+    &.rent, &.sale {
+        margin-top: -@empty-height/2 + 75px;
+    }    
+}
+
+.details {
+	padding: 0px 12px;
+	overflow: hidden;
+
+	.detail {
+        font-size: 13px;
+		float: left;
+		width: 45%;
+
+		.prop {
+			color: @gray;
+
+			&::after {
+				content: ':\00a0';
+			}
+		}
+
+		&:first-child {
+			width: 55%;
+		}
+	}
+}
+
+
+.hl {
+	color: @brand-primary;
+}
+
+.loadingDiv {
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    img {
+        width:60px;
+        height:60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -30px;
+        margin-top: -30px;
+    }   
+} 
+
+.carousel-indicators {
+    bottom: -10px;
+
+    li {
+        width: 5px;
+        height: 5px;
+    }
+
+    .active {
+        margin-bottom: 1px;
+        width: 5px;
+        height: 5px;
+    }
+}

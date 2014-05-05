@@ -1,0 +1,291 @@
+@import "../../../bower_components/bootstrap/less/variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+@import "base.less";
+
+
+#residenceOnSell {
+	min-height: 100%;
+	background-color: @bg-color;
+ 
+    #sale_sold_bg {
+        position:relative;
+        z-index: 1006;
+        top: 12px;
+        left: -38px; 
+        margin:auto;
+        width: 80px;
+        background: -webkit-linear-gradient(#5095e3, #4585cf); /* For Safari */
+        background: -o-linear-gradient(#5095e3, #4585cf); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(#5095e3, #4585cf); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(#5095e3, #4585cf); /* Standard syntax */
+        height:26px;
+        border-radius:15px;
+    } 
+   
+    #sale_sold_all_bg {
+        width:160px;
+        height:30px;
+        position: absolute;
+        left: 50%;
+        z-index: 1005;
+        margin-left: -80px;
+        top: 10px;
+        background-color:#3d4048;
+        border:1px solid #141518;
+        border-radius: 15px;
+    }
+                 
+    #on_rent_title {
+        left: 50%;
+        width: 160px;
+        height: 30px;
+        position: absolute;
+        z-index: 1007;
+        margin-left: -80px;
+        top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    #sale_sold {
+        width:160px;
+        height:30px;
+        position: absolute;
+        left: 50%;
+        z-index: 1007;
+        margin-left: -80px;
+        top: 10px;
+
+        ul {
+            list-style: none;
+
+            li a{
+                color: #c6c6c6;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+            }   
+
+            #sale {
+                position:relative;
+                top: 0;
+                left:-28px;
+                font-size: @font-size-base;
+                line-height: 28px;
+                z-index:100;
+                margin-right:16px;    
+                text-decoration:none; 
+            }   
+
+            .active a{
+                color: #fff;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+            }   
+
+            #sold {
+                position: relative;
+                top: -28px;
+                left: 52px;
+                font-size: @font-size-base;
+                line-height: 28px;
+                z-index: 100;
+                margin-right:9px;
+                text-decoration:none;
+            }   
+        }   
+    }
+
+
+	.banner {
+
+		.header {
+			font-size: @font-size-large;
+			text-align: center;
+            #sale_sold {
+                width:160px;
+                height:30px;
+                margin:auto;
+                border:1px solid #141518;
+                background-color:#3d4048;
+                border-radius: 15px;
+    
+                ul {
+                    list-style: none;
+    
+                    li a{
+                        color: #c6c6c6;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+                    }   
+    
+                    #sale {
+                        position:relative;
+                        top: -2px;
+                        left:-52px;
+                        font-size: @font-size-base;
+                        line-height: 28px;
+                        z-index:100;
+                        margin-right:16px;    
+                        text-decoration:none; 
+                    }   
+
+                    .active a{
+                        color: #fff;
+                        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+                    }   
+
+                    #sold {
+                        position: relative;
+                        top: -32px;
+                        left: 25px;
+                        font-size: @font-size-base;
+                        line-height: 28px;
+                        z-index: 100;
+                        margin-right:9px;
+                        text-decoration:none;
+                    }   
+                }   
+
+            }
+            #sale_sold_bg {
+                position:relative;
+                top: -28px;
+                left: -38px; 
+                margin:auto;
+                width: 80px;
+                background: -webkit-linear-gradient(#5095e3, #4585cf); /* For Safari */
+                background: -o-linear-gradient(#5095e3, #4585cf); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(#5095e3, #4585cf); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(#5095e3, #4585cf); /* Standard syntax */
+                height:26px;
+                border-radius:15px;
+            } 
+		}
+        
+		.sub {
+            font-size:12px;
+			text-align: center;
+			line-height: 20px;
+		}
+	}
+
+	#onsell-content {
+		position: fixed;
+		top: 70px;
+		bottom: 0px;
+		width: 100%;
+		overflow: auto;
+
+		#residence-onsell-houses {
+			width: 100%;
+			height: 150px;
+
+			img {
+				display: block;
+				width: 100%;
+				height: 150px;
+                background:url('/assets/img/default_cover_large.png') no-repeat top left;
+                background-size: 100% 100%;
+			}
+		}
+
+		.houses {
+			padding: 5px;
+			width: 100%;
+
+			&.no-house {
+				position: fixed;	
+                top: 75px;
+                bottom: 0;
+				width: 100%;
+			}
+
+			.residence-wrap {
+				.residence {
+					position: relative;
+		
+					.price {
+						position: absolute;;
+						right: 5px;
+						top: 5px;
+					}
+				}
+
+				&:last-child {
+					margin-bottom: 30px;
+				}
+			}
+        
+            #load-more{
+                width: 100%;
+                height: 40px;
+                border-radius: 5px; 
+                box-shadow: 0px 0px 8px #000;
+                #gradient > .vertical(#fff, #e9e9e9);
+            }
+
+			.details {
+				padding: 1px 0px;
+                
+                .detail {
+                    font-size: 13px;
+                }
+			}
+		}
+	}
+		
+	.sortbar {
+		text-align: center;
+		position: fixed;
+		bottom: 0px;
+		width: 100%;
+		padding: 10px 0px;
+		cursor: pointer;
+		background: rgba(0, 0, 0, .6);
+        background-repeat: no-repeat;
+        background-position: center;
+
+		span {
+            font-size: 20px;
+			color: #fff;
+			background: url(/assets/img/order_icon.png) left center no-repeat transparent;
+			background-size: 40px 40px;
+			padding-left: 40px;
+		}
+	}
+	
+	#allsorts {
+		@sort-btn-height: 25px;
+		padding: 0px 20px 20px;
+		width: 100%;
+		background-color: rgba(0, 0, 0, .6);
+		z-index: @zindex-modal-background + 1;
+		bottom: 0px;
+		position: fixed;
+
+		h5 {
+			color: #fff;
+			font-weight: normal;
+			text-align: center;
+			margin-top: 5px;
+		}
+
+		button {
+			.button-variant(@text-color; #ebebeb; #fff);
+			.button-size(7px; 0px; @font-size-base; @line-height-base; 0px);
+			#gradient > .vertical(#fff, #e9e9e9);
+			margin-bottom: 7px;
+			border: none;
+			display: block;
+			width: 100%;
+		}	
+
+		button::last-child {
+			margin-bottom: 0px;
+		}
+	}
+
+	.modal-backdrop {
+		.opacity(0);
+	}
+}
+

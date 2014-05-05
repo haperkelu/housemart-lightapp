@@ -1,0 +1,1269 @@
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.affix {
+  position: fixed;
+}
+#map-sell-banner .header img {
+  display: block;
+  float: left;
+  max-height: 100%;
+}
+#map-sell-banner .header #haoshimai {
+  float: left;
+  line-height: 30px;
+  font-size: 18px;
+}
+#map-sell-banner .header #area {
+  padding-left: 20px;
+  line-height: 35px;
+  font-size: 14px;
+  float: right;
+}
+#map-sell-banner .header #sale_rent {
+  width: 120px;
+  height: 30px;
+  margin: auto;
+  border: 1px solid #141518;
+  background-color: #3d4048;
+  border-radius: 15px;
+}
+#map-sell-banner .header #sale_rent ul {
+  list-style: none;
+}
+#map-sell-banner .header #sale_rent ul li a {
+  color: #c6c6c6;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#map-sell-banner .header #sale_rent ul #on-sale {
+  font-size: 14px;
+  line-height: 28px;
+  position: relative;
+  left: -40px;
+  top: -32px;
+  z-index: 100;
+  margin-right: 16px;
+  text-decoration: none;
+}
+#map-sell-banner .header #sale_rent ul .active a {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#map-sell-banner .header #sale_rent ul #on-rent {
+  font-size: 14px;
+  line-height: 28px;
+  position: relative;
+  z-index: 100;
+  top: -2px;
+  left: 12px;
+  margin-right: 9px;
+  text-decoration: none;
+}
+#map-sell-banner .header #sale_rent_bg {
+  margin-top: 2px;
+  position: relative;
+  left: -29px;
+  top: -28px;
+  margin: auto;
+  width: 58px;
+  background: -webkit-linear-gradient(#5095e3, #4585cf);
+  /* For Safari */
+  background: -o-linear-gradient(#5095e3, #4585cf);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5095e3, #4585cf);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5095e3, #4585cf);
+  /* Standard syntax */
+  height: 26px;
+  border-radius: 15px;
+}
+#map-sell-banner .sub {
+  z-index: 9999;
+}
+#map-sell-banner .sub ul {
+  padding-left: 0;
+  margin: 0px;
+  overflow: hidden;
+  list-style: none;
+}
+#map-sell-banner .sub ul li {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 0px;
+  float: left;
+  border-right: 1px solid #5f636a;
+}
+#map-sell-banner .sub ul li.active a {
+  color: #f47c00;
+}
+#map-sell-banner .sub ul li a {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  padding: 5px 0px;
+}
+#map-sell-banner .sub ul li::last-child {
+  border-right: none;
+}
+.content-marker {
+  padding: 12px;
+  background: url('/assets/img/openning_detail_back.png');
+  background-size: 100% 100%;
+  width: 300px;
+  height: 150px;
+  color: #fff;
+}
+.content-marker img,
+.content-marker .info {
+  float: left;
+}
+.content-marker img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 7px;
+  background: url('/assets/img/nopic_default.png') no-repeat top left;
+  background-size: 100% 100%;
+}
+.content-marker .info p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.marker-wrap {
+  position: absolute;
+}
+.marker-wrap::after {
+  content: '';
+  width: 8px;
+  height: 12px;
+  display: block;
+  background: url(/assets/img/flag_arrow.png) top center transparent;
+  position: relative;
+  left: 25px;
+  margin-top: -14px;
+  background-size: 100% 100%;
+}
+.marker-wrap .marker {
+  color: #fff;
+  white-space: nowrap;
+}
+.marker-wrap .marker::after,
+.marker-wrap .marker::before,
+.marker-wrap .marker .content {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  height: 38px;
+}
+.marker-wrap .marker::before,
+.marker-wrap .marker::after {
+  content: '';
+  width: 9px;
+}
+.marker-wrap .marker::before {
+  background: url(/assets/img/flag_left.png) top center transparent;
+  background-size: 100% 100%;
+}
+.marker-wrap .marker::after {
+  background: url(/assets/img/flag_right.png) top center transparent;
+  background-size: 100% 100%;
+}
+.marker-wrap .marker .content {
+  padding: 5px 3px;
+  font-size: 12px;
+  white-space: nowrap;
+  background: url(/assets/img/flag_middle.png) top center transparent;
+  background-size: 100% 100%;
+}
+.marker-wrap .marker .content .name,
+.marker-wrap .marker .content .para {
+  display: inline-block;
+}
+.marker-wrap .marker .content .name {
+  border-right: 1px solid #7fb3ed;
+  padding-right: 5px;
+}
+.marker-wrap .marker .content .para {
+  border-left: 2px solid #548ecd;
+  padding-left: 5px;
+}
+#locationPlate {
+  font-size: 12px;
+  line-height: 11.5px;
+  position: fixed;
+  display: block;
+  bottom: 20px;
+  left: 60px;
+  height: 21px;
+  min-width: 100px;
+  padding: 5px 12px;
+  color: #fff;
+  width: auto;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6);
+}
+#nearbyButton {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+}
+#nearbyButton img {
+  width: 45px;
+  height: 45px;
+}
+#searchButton {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
+#searchButton img {
+  width: 45px;
+  height: 45px;
+}
+#enquiry-history-button {
+  position: fixed;
+  bottom: 75px;
+  right: 10px;
+}
+#enquiry-history-button img {
+  width: 45px;
+  height: 45px;
+}
+#count-badge {
+  position: fixed;
+  bottom: 110px;
+  right: 0px;
+  background-color: red;
+}
+#residenceSearch {
+  background-color: #4b4e59;
+  min-height: 100%;
+}
+#residenceSearch .loadingDiv {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#residenceSearch .loadingDiv img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+#residenceSearch .banner .header {
+  padding: 5px;
+  position: relative;
+}
+#residenceSearch .banner .header .input-wrap {
+  margin-right: 60px;
+}
+#residenceSearch .banner .header .input-wrap input[type=search] {
+  background: url(/assets/img/searchbox_icon.png) 7px center no-repeat #ffffff;
+  padding: 8px 12px 8px 32px;
+  outline: none;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 18px;
+  border: none;
+  width: 100%;
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+#residenceSearch .banner .header button {
+  position: absolute;
+  border: none;
+  right: 7px;
+  top: 7px;
+  color: #ffffff;
+  background-color: #4b4e59;
+  border-color: #4b4e59;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  background-image: -webkit-linear-gradient(top, #626675 0%, #4b4e59 100%);
+  background-image: linear-gradient(to bottom, #626675 0%, #4b4e59 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff626675', endColorstr='#ff4b4e59', GradientType=0);
+}
+#residenceSearch .banner .header button:hover,
+#residenceSearch .banner .header button:focus,
+#residenceSearch .banner .header button:active,
+#residenceSearch .banner .header button.active,
+.open .dropdown-toggle#residenceSearch .banner .header button {
+  color: #ffffff;
+  background-color: #383b43;
+  border-color: #2f3138;
+}
+#residenceSearch .banner .header button:active,
+#residenceSearch .banner .header button.active,
+.open .dropdown-toggle#residenceSearch .banner .header button {
+  background-image: none;
+}
+#residenceSearch .banner .header button.disabled,
+#residenceSearch .banner .header button[disabled],
+fieldset[disabled] #residenceSearch .banner .header button,
+#residenceSearch .banner .header button.disabled:hover,
+#residenceSearch .banner .header button[disabled]:hover,
+fieldset[disabled] #residenceSearch .banner .header button:hover,
+#residenceSearch .banner .header button.disabled:focus,
+#residenceSearch .banner .header button[disabled]:focus,
+fieldset[disabled] #residenceSearch .banner .header button:focus,
+#residenceSearch .banner .header button.disabled:active,
+#residenceSearch .banner .header button[disabled]:active,
+fieldset[disabled] #residenceSearch .banner .header button:active,
+#residenceSearch .banner .header button.disabled.active,
+#residenceSearch .banner .header button[disabled].active,
+fieldset[disabled] #residenceSearch .banner .header button.active {
+  background-color: #4b4e59;
+  border-color: #4b4e59;
+}
+#residenceSearch .banner .header button .badge {
+  color: #4b4e59;
+  background-color: #ffffff;
+}
+#residenceSearch .residences {
+  z-index: 999;
+  position: absolute;
+  top: 50px;
+  bottom: 0px;
+  padding: 10px;
+  width: 100%;
+  overflow: auto;
+}
+#residenceSearch .residences .details {
+  padding: 1px 0px;
+  font-size: 14px;
+}
+#residenceSearch .residences .details .detail {
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#residenceSearch .residences .details .detail .highlight {
+  font-size: 14px;
+}
+#residenceOnSell {
+  min-height: 100%;
+  background-color: #4b4e59;
+}
+#residenceOnSell #sale_sold_bg {
+  position: relative;
+  z-index: 1006;
+  top: 12px;
+  left: -38px;
+  margin: auto;
+  width: 80px;
+  background: -webkit-linear-gradient(#5095e3, #4585cf);
+  /* For Safari */
+  background: -o-linear-gradient(#5095e3, #4585cf);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5095e3, #4585cf);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5095e3, #4585cf);
+  /* Standard syntax */
+  height: 26px;
+  border-radius: 15px;
+}
+#residenceOnSell #sale_sold_all_bg {
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  z-index: 1005;
+  margin-left: -80px;
+  top: 10px;
+  background-color: #3d4048;
+  border: 1px solid #141518;
+  border-radius: 15px;
+}
+#residenceOnSell #on_rent_title {
+  left: 50%;
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  z-index: 1007;
+  margin-left: -80px;
+  top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+}
+#residenceOnSell #sale_sold {
+  width: 160px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  z-index: 1007;
+  margin-left: -80px;
+  top: 10px;
+}
+#residenceOnSell #sale_sold ul {
+  list-style: none;
+}
+#residenceOnSell #sale_sold ul li a {
+  color: #c6c6c6;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#residenceOnSell #sale_sold ul #sale {
+  position: relative;
+  top: 0;
+  left: -28px;
+  font-size: 14px;
+  line-height: 28px;
+  z-index: 100;
+  margin-right: 16px;
+  text-decoration: none;
+}
+#residenceOnSell #sale_sold ul .active a {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#residenceOnSell #sale_sold ul #sold {
+  position: relative;
+  top: -28px;
+  left: 52px;
+  font-size: 14px;
+  line-height: 28px;
+  z-index: 100;
+  margin-right: 9px;
+  text-decoration: none;
+}
+#residenceOnSell .banner .header {
+  font-size: 18px;
+  text-align: center;
+}
+#residenceOnSell .banner .header #sale_sold {
+  width: 160px;
+  height: 30px;
+  margin: auto;
+  border: 1px solid #141518;
+  background-color: #3d4048;
+  border-radius: 15px;
+}
+#residenceOnSell .banner .header #sale_sold ul {
+  list-style: none;
+}
+#residenceOnSell .banner .header #sale_sold ul li a {
+  color: #c6c6c6;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#residenceOnSell .banner .header #sale_sold ul #sale {
+  position: relative;
+  top: -2px;
+  left: -52px;
+  font-size: 14px;
+  line-height: 28px;
+  z-index: 100;
+  margin-right: 16px;
+  text-decoration: none;
+}
+#residenceOnSell .banner .header #sale_sold ul .active a {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
+#residenceOnSell .banner .header #sale_sold ul #sold {
+  position: relative;
+  top: -32px;
+  left: 25px;
+  font-size: 14px;
+  line-height: 28px;
+  z-index: 100;
+  margin-right: 9px;
+  text-decoration: none;
+}
+#residenceOnSell .banner .header #sale_sold_bg {
+  position: relative;
+  top: -28px;
+  left: -38px;
+  margin: auto;
+  width: 80px;
+  background: -webkit-linear-gradient(#5095e3, #4585cf);
+  /* For Safari */
+  background: -o-linear-gradient(#5095e3, #4585cf);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5095e3, #4585cf);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5095e3, #4585cf);
+  /* Standard syntax */
+  height: 26px;
+  border-radius: 15px;
+}
+#residenceOnSell .banner .sub {
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+}
+#residenceOnSell #onsell-content {
+  position: fixed;
+  top: 70px;
+  bottom: 0px;
+  width: 100%;
+  overflow: auto;
+}
+#residenceOnSell #onsell-content #residence-onsell-houses {
+  width: 100%;
+  height: 150px;
+}
+#residenceOnSell #onsell-content #residence-onsell-houses img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  background: url('/assets/img/default_cover_large.png') no-repeat top left;
+  background-size: 100% 100%;
+}
+#residenceOnSell #onsell-content .houses {
+  padding: 5px;
+  width: 100%;
+}
+#residenceOnSell #onsell-content .houses.no-house {
+  position: fixed;
+  top: 75px;
+  bottom: 0;
+  width: 100%;
+}
+#residenceOnSell #onsell-content .houses .residence-wrap .residence {
+  position: relative;
+}
+#residenceOnSell #onsell-content .houses .residence-wrap .residence .price {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+#residenceOnSell #onsell-content .houses .residence-wrap:last-child {
+  margin-bottom: 30px;
+}
+#residenceOnSell #onsell-content .houses #load-more {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px #000;
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e9e9e9 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e9e9e9 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe9e9e9', GradientType=0);
+}
+#residenceOnSell #onsell-content .houses .details {
+  padding: 1px 0px;
+}
+#residenceOnSell #onsell-content .houses .details .detail {
+  font-size: 13px;
+}
+#residenceOnSell .sortbar {
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 0px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.6);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#residenceOnSell .sortbar span {
+  font-size: 20px;
+  color: #fff;
+  background: url(/assets/img/order_icon.png) left center no-repeat transparent;
+  background-size: 40px 40px;
+  padding-left: 40px;
+}
+#residenceOnSell #allsorts {
+  padding: 0px 20px 20px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1041;
+  bottom: 0px;
+  position: fixed;
+}
+#residenceOnSell #allsorts h5 {
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 5px;
+}
+#residenceOnSell #allsorts button {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #ffffff;
+  padding: 7px 0px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 0px;
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e9e9e9 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e9e9e9 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe9e9e9', GradientType=0);
+  margin-bottom: 7px;
+  border: none;
+  display: block;
+  width: 100%;
+}
+#residenceOnSell #allsorts button:hover,
+#residenceOnSell #allsorts button:focus,
+#residenceOnSell #allsorts button:active,
+#residenceOnSell #allsorts button.active,
+.open .dropdown-toggle#residenceOnSell #allsorts button {
+  color: #333333;
+  background-color: #d7d7d7;
+  border-color: #e0e0e0;
+}
+#residenceOnSell #allsorts button:active,
+#residenceOnSell #allsorts button.active,
+.open .dropdown-toggle#residenceOnSell #allsorts button {
+  background-image: none;
+}
+#residenceOnSell #allsorts button.disabled,
+#residenceOnSell #allsorts button[disabled],
+fieldset[disabled] #residenceOnSell #allsorts button,
+#residenceOnSell #allsorts button.disabled:hover,
+#residenceOnSell #allsorts button[disabled]:hover,
+fieldset[disabled] #residenceOnSell #allsorts button:hover,
+#residenceOnSell #allsorts button.disabled:focus,
+#residenceOnSell #allsorts button[disabled]:focus,
+fieldset[disabled] #residenceOnSell #allsorts button:focus,
+#residenceOnSell #allsorts button.disabled:active,
+#residenceOnSell #allsorts button[disabled]:active,
+fieldset[disabled] #residenceOnSell #allsorts button:active,
+#residenceOnSell #allsorts button.disabled.active,
+#residenceOnSell #allsorts button[disabled].active,
+fieldset[disabled] #residenceOnSell #allsorts button.active {
+  background-color: #ebebeb;
+  border-color: #ffffff;
+}
+#residenceOnSell #allsorts button .badge {
+  color: #ebebeb;
+  background-color: #333333;
+}
+#residenceOnSell #allsorts button::last-child {
+  margin-bottom: 0px;
+}
+#residenceOnSell .modal-backdrop {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+a[href="http://tongji.baidu.com/hm-web/welcome/ico?s=8219f44b51d2c77305d20385ea4962ba"] {
+  display: none;
+}
+.banner {
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 1000;
+}
+.banner .header {
+  height: 50px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+  z-index: 1002;
+  position: relative;
+  text-align: center;
+  background: url('/assets/img/title.png') 100% 100%;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.banner .header .info {
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  position: absolute;
+  right: 10px;
+}
+.banner .header .info img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.banner .header .back {
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  position: absolute;
+  left: 10px;
+}
+.banner .header .back img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.banner .sub {
+  z-index: 1001;
+  position: relative;
+  color: #fff;
+  background-color: #494c56;
+}
+.haoshimai-overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.residence-wrap {
+  height: 80px;
+  box-shadow: 0px 0px 8px #000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e9e9e9 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #e9e9e9 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe9e9e9', GradientType=0);
+}
+.residence-wrap .residence {
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 3px #fff;
+  position: relative;
+  padding: 5px;
+  overflow: hidden;
+}
+.residence-wrap .residence img:not(.sold_pic) {
+  position: absolute;
+  border-radius: 5px;
+  width: 70px;
+  height: 70px;
+  left: 5px;
+  top: 5px;
+  background: url('/assets/img/default_cover_small.png') no-repeat top left;
+  background-size: 100% 100%;
+}
+.residence-wrap .residence .sold_pic {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 45px;
+  top: 15px;
+  z-index: 100;
+}
+.residence-wrap .residence .highlight {
+  font-size: 15px;
+  color: #08c;
+}
+.residence-wrap .residence .info {
+  margin-left: 80px;
+}
+.residence-wrap .residence .info .details {
+  margin-bottom: 3px;
+  overflow: hidden;
+}
+.residence-wrap .residence .info .details .detail {
+  display: block;
+  float: left;
+  width: 45%;
+}
+.residence-wrap .residence .info .details.last {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.resident-wrap:last-child {
+  margin-bottom: 0px;
+}
+.empty {
+  color: #2b2d30;
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  margin-top: -12.5px;
+  top: 50%;
+}
+.empty.rent,
+.empty.sale {
+  margin-top: 62.5px;
+}
+.details {
+  padding: 0px 12px;
+  overflow: hidden;
+}
+.details .detail {
+  font-size: 13px;
+  float: left;
+  width: 45%;
+}
+.details .detail .prop {
+  color: #555555;
+}
+.details .detail .prop::after {
+  content: ':\00a0';
+}
+.details .detail:first-child {
+  width: 55%;
+}
+.hl {
+  color: #428bca;
+}
+.loadingDiv {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.loadingDiv img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.carousel-indicators {
+  bottom: -10px;
+}
+.carousel-indicators li {
+  width: 5px;
+  height: 5px;
+}
+.carousel-indicators .active {
+  margin-bottom: 1px;
+  width: 5px;
+  height: 5px;
+}
+#houseDetail {
+  min-height: 100%;
+  background-color: #fff;
+}
+#houseDetail #content {
+  top: 50px;
+  bottom: 40px;
+  overflow: auto;
+  width: 100%;
+  position: absolute;
+}
+#houseDetail #content #house-detail-images img {
+  display: block;
+  height: 150px;
+  width: 100%;
+  background: url('/assets/img/default_cover_large.png') no-repeat top left;
+  background-size: 100% 100%;
+}
+#houseDetail #content .title {
+  -webkit-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.6);
+  background-color: #4b4e59;
+  padding-left: 12px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 14px;
+}
+#houseDetail #content .important-info {
+  overflow: hidden;
+  padding: 8px 12px;
+}
+#houseDetail #content .important-info .price {
+  float: left;
+  font-size: 18px;
+  line-height: 1.42857143;
+  color: #428bca;
+}
+#houseDetail #content .important-info .type,
+#houseDetail #content .important-info .area {
+  float: right;
+  padding-right: 30px;
+  line-height: 25.71428572px;
+  font-size: 15px;
+}
+#houseDetail #content .details {
+  margin-bottom: 2px;
+}
+#houseDetail #content .details a.detail {
+  display: block;
+  text-decoration: none;
+  background: url(/assets/img/arrow_right.png) right center no-repeat transparent;
+  background-size: 9.33333333px 14px;
+}
+#houseDetail #content .details a.detail .value {
+  color: #333333;
+}
+#houseDetail #content .details .detail {
+  font-size: 14px;
+}
+#houseDetail #content #house-residence,
+#houseDetail #content #house-address {
+  display: block;
+  width: 100%;
+}
+#houseDetail #askButton {
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.6);
+  padding: 0px 12px;
+  font-size: 20px;
+  line-height: 1.42857143;
+  border-radius: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 100;
+}
+#houseDetail #askButton:hover,
+#houseDetail #askButton:focus,
+#houseDetail #askButton:active,
+#houseDetail #askButton.active,
+.open .dropdown-toggle#houseDetail #askButton {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.6);
+}
+#houseDetail #askButton:active,
+#houseDetail #askButton.active,
+.open .dropdown-toggle#houseDetail #askButton {
+  background-image: none;
+}
+#houseDetail #askButton.disabled,
+#houseDetail #askButton[disabled],
+fieldset[disabled] #houseDetail #askButton,
+#houseDetail #askButton.disabled:hover,
+#houseDetail #askButton[disabled]:hover,
+fieldset[disabled] #houseDetail #askButton:hover,
+#houseDetail #askButton.disabled:focus,
+#houseDetail #askButton[disabled]:focus,
+fieldset[disabled] #houseDetail #askButton:focus,
+#houseDetail #askButton.disabled:active,
+#houseDetail #askButton[disabled]:active,
+fieldset[disabled] #houseDetail #askButton:active,
+#houseDetail #askButton.disabled.active,
+#houseDetail #askButton[disabled].active,
+fieldset[disabled] #houseDetail #askButton.active {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 0, 0, 0.6);
+}
+#houseDetail #askButton .badge {
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #ffffff;
+}
+#houseDetail #askButton .inner {
+  background: url(/assets/img/answer_icon_normal.png) left center no-repeat transparent;
+  background-size: 40px 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85px;
+  height: auto;
+  line-height: 42px;
+  padding-left: 40px;
+}
+#residence-onsell-detail .sub {
+  padding: 5px 12px;
+}
+#residence-onsell-detail .content {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 0px;
+  overflow: auto;
+}
+#residence-onsell-detail .content #residence-detail-images img {
+  display: block;
+  height: 150px;
+  width: 100%;
+  background: url('/assets/img/default_cover_large.png') no-repeat top left;
+  background-size: 100% 100%;
+}
+#residence-onsell-detail .content .details {
+  margin: 3px 0px;
+}
+#residence-onsell-detail .content .details .detail span.prop {
+  display: inline-block;
+  width: 65px;
+}
+#residence-onsell-detail .content .sketch {
+  position: relative;
+  overflow: hidden;
+  padding: 0px 12px;
+}
+#residence-onsell-detail .content .sketch .title {
+  position: absolute;
+  width: 70px;
+  font-size: 13px;
+  color: #555555;
+}
+#residence-onsell-detail .content .sketch .info {
+  margin-left: 70px;
+}
+#residence-onsell-detail .content .statistics {
+  padding: 2px 8px 8px;
+  background: #333333;
+}
+#residence-onsell-detail .content .statistics p {
+  margin: 0px 0px 3px;
+}
+#enquiry-history .content {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  overflow: auto;
+  bottom: 0px;
+}
+#enquiry-history .content .messages {
+  padding: 5px;
+}
+#enquiry-history .content .messages .residence-wrap {
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: visible;
+  height: 60px;
+}
+#enquiry-history .content .messages .residence-wrap .residence {
+  height: 60px;
+}
+#enquiry-history .content .messages .residence-wrap .residence img {
+  width: 50px;
+  height: 50px;
+}
+#enquiry-history .content .messages .residence-wrap .residence .info {
+  margin-left: 45px;
+}
+#enquiry-history .content .messages .residence-wrap .residence .info .price {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
+#enquiry-history .content .messages .residence-wrap .residence .info .time {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  color: #999999;
+}
+#enquiry-history .content .messages .residence-wrap .residence .info .details {
+  margin-bottom: 1px;
+  font-size: 13px;
+}
+#enquiry-history .content .messages .residence-wrap .count {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #b20;
+  color: #fff;
+  margin-top: -2px;
+  margin-right: -2px;
+}
+#enquiry-history .content .empty {
+  width: 145px;
+  height: 20px;
+  margin-left: -72px;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#chat .messages {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  overflow: auto;
+  bottom: 45px;
+}
+#chat .messages .message-time {
+  clear: both;
+  width: 100%;
+  text-align: center;
+}
+#chat .messages .message {
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 75%;
+  min-width: 30px;
+  float: right;
+  clear: both;
+  margin: 10px 20px 10px 50px;
+  position: relative;
+}
+#chat .messages .message.agent {
+  background: #428bca;
+  color: #fff;
+  float: left;
+  background-image: -webkit-linear-gradient(top, #63a4ed 0%, #4585cf 100%);
+  background-image: linear-gradient(to bottom, #63a4ed 0%, #4585cf 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff63a4ed', endColorstr='#ff4585cf', GradientType=0);
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0 0 6px #bcbcbc;
+  box-shadow: 0 0 6px #bcbcbc;
+}
+#chat .messages .message.normal {
+  background-image: -webkit-linear-gradient(top, #dedede 0%, #f8f8f8 100%);
+  background-image: linear-gradient(to bottom, #dedede 0%, #f8f8f8 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdedede', endColorstr='#fff8f8f8', GradientType=0);
+  border: 1px solid #c0c0c0;
+  -webkit-box-shadow: 0 0 1px #ffffff inset, 0 0 6px #bcbcbc;
+  -moz-box-shadow: 0 0 1px #ffffff inset, 0 0 6px #bcbcbc;
+  box-shadow: 0 0 1px #ffffff inset, 0 0 6px #bcbcbc;
+}
+#chat .messages .message.normal::after {
+  content: '';
+  width: 10px;
+  height: 15px;
+  background-image: url('/assets/img/small_sanjiao_white.png');
+  background-size: 100% 100%;
+  position: absolute;
+  top: 10px;
+  right: -10px;
+}
+#chat .messages .message.agent::after {
+  background-image: url('/assets/img/small_sanjiao_blue.png');
+  background-size: 100% 100%;
+  content: '';
+  width: 10px;
+  height: 15px;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+}
+#chat .messages .message:last-child {
+  margin-bottom: 25px;
+}
+#chat .messages img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  left: -45px;
+  background: url('/assets/img/default_people.png') no-repeat top left;
+  background-size: 100% 100%;
+}
+#chat .bar {
+  position: absolute;
+  bottom: 0px;
+  height: 45px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+#chat .bar .bar-inner {
+  padding: 7px 5px 5px;
+  position: relative;
+  z-index: 2000;
+}
+#chat .bar .bar-inner button {
+  position: absolute;
+  width: 80px;
+  border: none;
+  right: 5px;
+  top: 7px;
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+#chat .bar .bar-inner button:hover,
+#chat .bar .bar-inner button:focus,
+#chat .bar .bar-inner button:active,
+#chat .bar .bar-inner button.active,
+.open .dropdown-toggle#chat .bar .bar-inner button {
+  color: #ffffff;
+  background-color: #3276b1;
+  border-color: #2d6ca2;
+}
+#chat .bar .bar-inner button:active,
+#chat .bar .bar-inner button.active,
+.open .dropdown-toggle#chat .bar .bar-inner button {
+  background-image: none;
+}
+#chat .bar .bar-inner button.disabled,
+#chat .bar .bar-inner button[disabled],
+fieldset[disabled] #chat .bar .bar-inner button,
+#chat .bar .bar-inner button.disabled:hover,
+#chat .bar .bar-inner button[disabled]:hover,
+fieldset[disabled] #chat .bar .bar-inner button:hover,
+#chat .bar .bar-inner button.disabled:focus,
+#chat .bar .bar-inner button[disabled]:focus,
+fieldset[disabled] #chat .bar .bar-inner button:focus,
+#chat .bar .bar-inner button.disabled:active,
+#chat .bar .bar-inner button[disabled]:active,
+fieldset[disabled] #chat .bar .bar-inner button:active,
+#chat .bar .bar-inner button.disabled.active,
+#chat .bar .bar-inner button[disabled].active,
+fieldset[disabled] #chat .bar .bar-inner button.active {
+  background-color: #428bca;
+  border-color: #428bca;
+}
+#chat .bar .bar-inner button .badge {
+  color: #428bca;
+  background-color: #ffffff;
+}
+#chat .bar .bar-inner .input-wrap {
+  margin-right: 85px;
+}
+#chat .bar .bar-inner .input-wrap input[type=text] {
+  padding: 5px 12px 5px 12px;
+  outline: none;
+  line-height: 20px;
+  font-size: 14px;
+  border-radius: 15px;
+  border: none;
+  width: 100%;
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+#picShow {
+  height: 100%;
+  background-color: #000;
+}
+#picShow img {
+  background: url('/assets/img/default_cover_large.png') no-repeat top left;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,107 @@
+@import "../../../bower_components/bootstrap/less/variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+@import "base.less";
+
+
+#houseDetail {
+	min-height: 100%;
+	background-color: #fff;
+
+
+	#content {
+		top: @banner-header-height;
+		bottom: 40px;
+		overflow: auto;
+		width: 100%;
+		position: absolute;
+
+		#house-detail-images {
+			img {
+				display: block;
+				height: 150px;
+				width: 100%;
+                background:url('/assets/img/default_cover_large.png') no-repeat top left;
+                background-size: 100% 100%;
+			}
+
+		}
+
+		.title {
+			.box-shadow(inset 0px 2px 3px rgba(0, 0, 0, .6));
+			background-color: @bg-color;
+			padding-left: 12px;
+            line-height: 24px;
+			color: #fff;
+            font-size: 14px;
+		}
+
+		.important-info {
+			overflow: hidden;
+			padding: 8px 12px;
+
+			.price {
+				float: left;
+				font-size: @font-size-large;
+				line-height: @line-height-base;
+				color: @brand-primary;
+			}
+
+			.type, .area {
+				float: right;
+				padding-right: 30px;
+				line-height: @line-height-base * @font-size-large;
+                font-size: 15px;
+			}
+
+		}
+
+		.details {
+            margin-bottom: 2px;
+        
+			a.detail {
+				display: block;
+				text-decoration: none;
+				background: url(/assets/img/arrow_right.png) right center no-repeat transparent;
+				background-size: @font-size-base*2/3 @font-size-base;
+
+				.value {
+					color: @gray-dark;
+				}
+			}
+           
+            .detail {
+                font-size: 14px;
+            }
+		}
+
+		
+		#house-residence, #house-address {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	#askButton {
+		color: #fff;
+		width:100%;
+		position:absolute;
+		bottom:0;
+		border: none;
+		.button-variant(#fff; rgba(0, 0, 0, .6); rgba(0, 0, 0, .6));
+		.button-size(0px; 12px; 20px; @line-height-base; 0px;);
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 100;
+
+		.inner {
+			display: block;
+			background: url(/assets/img/answer_icon_normal.png) left center no-repeat transparent;
+			background-size: @line-height-computed + 20 @line-height-computed + 20; 
+			.center-block();
+			.size(85px; auto);
+			line-height: @line-height-computed + 22px;
+			padding-left: @line-height-computed + 20px;
+		}
+	}
+}
+

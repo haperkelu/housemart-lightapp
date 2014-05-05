@@ -1,0 +1,312 @@
+html, body{
+    width:100%;
+    height:100%;
+}
+
+#header {
+    width:100%;
+    height:auto;
+    
+}
+
+#header .map-title {
+	background:url('../img/title.png') 100% 100%;
+    width:100%;
+    height:70px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
+}
+
+#header .map-title img {
+	display: block;
+	max-height: 100%;
+	margin-right: 10px;
+    float:left;
+}
+
+#header .map-title #haoshimai {
+    line-height:50px;
+	color:#31363c;
+    font-size:40px;
+    float:left;
+}
+
+#header .map-title #area {
+	color:#31363c;
+    padding-left:20px;
+    line-height:60px;
+    font-size:32px;
+    float:left;
+}
+
+#header .map-title #on-sale {
+    padding-right:20px;
+    line-height:50px;
+    font-size:32px;
+	color:#31363c;
+    float:right;
+}
+
+#header .map-tab {
+	line-height:40px;
+    width:100%;
+    height:40px;
+    clear:both;
+}
+
+#header .map-tab  ul{
+    padding-left:0;
+    width:100%;
+    list-style:none;
+    margin:0px;
+}
+
+#header .map-tab  ul li a {
+	font-size:20px;
+	color: white;
+    text-align:center;
+    width:25%;
+    float:left;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	border-right:1px solid #5f636a;
+}
+
+
+#header .map-tab ul li #annualPriceIncreasement{
+    color:#f47c00;
+}
+
+#baiduMap {
+    z-index:-1;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    margin:0;
+}
+
+#locationPlate{
+	position:fixed;
+	display: block;
+	bottom:30px;
+	left:100px;
+	height: 30px;
+	min-width: 100px;
+	line-height: 20px;
+	padding: 5px 12px;
+	color: #fff;
+	width:auto;
+	border-radius: 15px;
+	background: rgba(0, 0, 0, .6);
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, .3);
+}
+
+#nearbyButton{
+	position:fixed;
+	bottom: 20px;
+	left: 20px;
+}
+
+#searchButton{
+	position:fixed;
+	bottom: 20px;
+	right: 20px;
+}
+
+#enquiry-history-button{
+	position:fixed;
+	bottom:100px;
+	right: 20px;
+}
+
+#searchResidentInput{
+	width:80%;
+	float:left;
+}
+
+#cancel{
+	float:right;
+}
+
+.markerFlag{
+	height:100px;
+	width:100px;
+	background-color:black;
+}
+
+#residence-onsell-header{
+	line-height:72px;
+	background:url('../img/title.png') 100% 100%;
+	width:100%;
+	height:72px;
+	text-align:center;
+	font-size:32px;
+	color:black;
+	position:absolute;
+	top:0;
+	background-color:#494c56;
+}
+
+#residence-onsell-header .back{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#residence-onsell-header #house-detail-icon{
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+#residence-onsell-total{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	background-color:#494c56;
+	position:absolute;
+	top:70px;
+	font-size:20px;
+	color:white;
+}
+
+#residence-content{
+	width:100%;
+	height:auto;
+	overflow:scroll;
+	position:absolute;
+	top:100px;
+}
+
+#residence-pic {
+	width:100%;
+	overflow: hidden;
+}
+
+#residence-pic img {
+	max-width: 100%;
+	height: auto;
+}
+
+#residence-pic .nav {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#residence-pic .nav li {
+	display: inline-block;
+	height: 0;
+	line-height: 0;
+	border: 10px solid #ddd;
+	width: 0;
+	border-radius: 100%;
+	margin: 0 10px;
+}
+
+#residence-pic .nav li.active {
+	border-color: #29A9D3;
+}
+
+#allsorts{
+	width:100%;
+	background-color:#494c56;
+	z-index:999;
+	position:fixed;
+	bottom:0;
+	height:200px;
+	display:none;
+}
+
+.content-marker {
+	padding: 20px;
+	background: url(../img/openning_detail_back.png);
+	background-size: 100% 100%;
+	width: 432px;
+	height: 200px;
+	color: #fff;
+}
+
+.content-marker img {
+	display: block;
+	width: 70px;
+	height: 70px;
+	margin-right: 10px;
+	border-radius: 7px;
+}
+
+.content-marker img,
+.content-marker .info {
+	float: left;
+}
+
+.content-marker .info p {
+	margin-bottom: 5px;
+}
+
+.marker-wrap {
+	position: absolute;
+}
+
+.marker-wrap::after {
+	background: url(../img/flag_arrow.png) top center transparent;
+	content: '';
+	width: 14px;
+	height: 24px;
+	display: block;
+	position: relative;
+	left: 30px;
+	margin-top: -8px;
+}
+
+.marker-wrap .marker {
+	color: #fff;
+	white-space: nowrap;
+}
+
+.marker-wrap .marker .content,
+.marker-wrap .marker::after,
+.marker-wrap .marker::before {
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: top;
+	height: 50px;
+}
+
+.marker-wrap .marker .content {
+	padding: 5px 0px;
+	white-space: nowrap;
+	background: url(../img/flag_middle.png) top center transparent;
+}
+
+.marker-wrap .marker .content span {
+	display: inline-block;	
+	line-height: 32px;
+}
+
+.marker-wrap .marker .content .name {
+	border-right: 1px solid #7fb3ed;
+	padding-right: 5px;
+}
+
+.marker-wrap .marker .content .para {
+	border-left: 2px solid #548ecd;
+	padding-left: 5px;
+}
+
+.marker-wrap .marker::after,
+.marker-wrap .marker::before {
+	content: '';
+	width: 9px;
+}
+
+.marker-wrap .marker::before {
+	background: url(../img/flag_left.png) top center transparent;
+}
+
+.marker-wrap .marker::after {
+	content: '';
+	width: 9px;
+	background: url(../img/flag_right.png) top center transparent;
+}

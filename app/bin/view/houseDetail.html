@@ -1,0 +1,148 @@
+<div id="houseDetail">
+<div class='loadingDiv'>
+     <img src="../assets/img/loading.gif"/>
+</div>
+<block tpl-id="house-detail">
+{{#compare saleRent "==" "sale"}}
+{{$ document.title=data.residenceName+','+data.price+','+data.area+','+data.roomType}}
+{{else}}
+{{$ document.title=data.residenceName+','+data.rentPrice+','+data.area+','+data.roomType}}
+{{/compare}}
+	<div class='banner'>
+		<div class="header">
+			<a class="back">
+				<img src="../assets/img/reback_icon.png"/>
+			</a>
+			房屋详情
+		</div>
+	</div>
+	<div id="content">
+		<div ontouchmove="event.preventDefault()" id="house-detail-images" class="carousel slide" 
+			data-ride="carousel">
+			<ol class="carousel-indicators">
+                {{#each data.picURLWithSize}}
+                {{#if this.first}}
+                <li data-target="#residence-onsell-houses" 
+                    data-slide-to="{{this.index}}" class="active"></li>
+                {{else}}
+                <li data-target="#residence-onsell-houses" 
+                    data-slide-to="{{this.index}}"></li>
+                {{/if}}
+                {{/each}}
+			</ol>
+
+			<div class="carousel-inner">
+                {{#compare data.picURLWithSize.length 0}}
+                    <div class="item active"><img/></div>
+                {{else}}
+                    {{#each data.picURLWithSize}}
+                        {{#if this.first}}
+                        <div class="item active"><img src="{{this.url}}"></div>
+                        {{else}}
+                        <div class="item"><img src="{{this.url}}"></div>
+                        {{/if}}
+                    {{/each}}
+                 {{/compare}}
+  			</div>
+		</div>
+        <div class="title">
+            {{#compare saleRent "==" "sale"}}
+            {{data.title}}
+            {{else}}
+            {{data.rentTitle}}
+            {{/compare}}
+		</div>
+		<div class="important-info">
+            <div class='price'>
+            {{#compare saleRent "==" "sale"}}
+            {{data.price}}
+            {{else}}
+            {{data.rentPrice}}
+            {{/compare}}
+            </div>
+			<div class="area">{{data.area}}</div>
+			<div class="type">{{data.roomType}}</div>
+		</div>
+		<div class="details">
+            <div class="detail">
+                {{#compare saleRent "==" "sale"}}
+                <span class='prop'>单价</span>
+                <span class='value'>{{data.avg}}</span>
+                {{else}}
+                {{/compare}}
+			</div>
+		</div>
+		<div class="details">
+			<div class="detail">
+				<span class='prop'>朝向</span>
+				<span class='value'>{{data.direction}}</span>
+			</div>
+			<div class="detail">
+				<span class='prop'>楼层</span>
+				<span class='value'>{{data.floorLevel}}</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class="detail">
+				<span class='prop'>装修</span>
+				<span class='value'>{{data.decorating}}</span>
+			</div>
+			<div class="detail">
+				<span class='prop'>年代</span>
+				<span class='value'>{{data.buildDateString}}</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class="detail">
+				<span class='prop'>挂牌时间</span>
+				<span class='value'>{{data.onboardTimeString}}</span>
+			</div>
+		</div>
+		<div class="details">
+			<div class="detail">
+				<span class='prop'>特殊说明</span>
+				<span class='value'>{{data.memo}}</span>
+			</div>
+        </div>
+        {{#compare saleRent "==" "rent"}}
+        <div class="details">
+			<div class="detail" style="width:100%">
+				<span class='prop'>房屋配置</span>
+				<span class='value'>{{data.equipment}}</span>
+			</div>
+        </div>
+        {{else}}
+        {{/compare}}
+
+		<div class="details" style="margin-top: 10px">
+			<a id='house-address' class='detail' lng='{{data.lng}}' 
+				lat='{{data.lat}}'>
+				<span class='prop'>地址</span>
+				<span class='value'>{{data.address}}</span>
+			</a>
+		</div>
+		<div class="details">
+			<a id='house-residence' class='detail' 
+				data-id='{{data.residenceId}}'>
+				<span class='prop'>小区</span>
+				<span class='value'>{{data.residenceName}}</span>
+			</a>
+		</div>
+		<div class="details">
+			<div class="detail">
+				<span class='prop'>编号</span>
+				<span class='value'>{{data.id}}</span>
+			</div>
+		</div>
+        <div style='height:20px;'></div>
+        <div style='height:20px;'></div>
+        <div style='height:20px;'></div>
+	</div>
+    {{$ Library.utils.changeElClass($('.loadingDiv'));}}
+</block>
+<div id="askButton" style="">
+    <span class='inner'>问询</span>
+</div>
+
+</div>
+</div>

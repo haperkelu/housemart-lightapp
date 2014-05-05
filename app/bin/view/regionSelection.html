@@ -1,0 +1,56 @@
+<table align="center">
+    <tr><td colspan="3" style="text-align: center">
+        <button id="cancel">取消</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="confirm">确定</button></td>
+    </tr>
+    <tr>
+        <td id="cityList">
+            <div class="click" data-id="2">
+                南加州
+            </div>
+            <div class="click" data-id="3">
+                北加州
+            </div>
+        </td>
+        <td id="regionList">
+
+            <block tpl-id="region_south">
+                <div parent-data-id="2">
+                    {{#each southCA}}
+                    <div data-id="{{this.regionId}}" class="click">{{this.regionName}}</div>
+                    {{/each}}
+                </div>
+            </block>
+
+            <block tpl-id="region_north">
+                <div parent-data-id="3">
+                    {{#each northCA}}
+                    <div data-id="{{this.regionId}}" class="click">{{this.regionName}}</div>
+                    {{/each}}
+                </div>
+            </block>
+
+        </td>
+        <td id="plateList">
+            <block tpl-id="plate_south">
+                {{#each southCA}}
+                <div parent-data-id="{{this.regionId}}">
+                    {{#each this.plateList}}
+                    <div data-id="{{this.id}}" class="click">{{this.name}}</div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </block>
+            <block tpl-id="plate_north">
+                {{#each northCA}}
+                <div parent-data-id="{{this.regionId}}">
+                    {{#each this.plateList}}
+                    <div data-id="{{this.id}}" class="click">{{this.name}}</div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </block>
+
+        </td>
+    </tr>
+</table>

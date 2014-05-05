@@ -1,0 +1,47 @@
+<block tpl-id="overseaCityContainer">
+    <style>
+
+        .cityArea {cursor: pointer;}
+        #mainContent {
+            position: fixed;
+            top: 100px;
+            left:100px;
+        }
+        #areaTable td {
+            font-size: 30px;
+            padding: 10px;
+        }
+
+
+    </style>
+    <div class="banner">
+        <div class="header">
+            <a class="back">
+                <img src="../assets/img/reback_icon.png"/>
+            </a>
+            <span id="headerTitle">城市切换</span>
+        </div>
+    </div>
+    <div id="mainContent">
+        <table id="areaTable">
+            <thead></thead>
+            <tbody>
+                <tr data-id="2"><td id="2_cityArea" class="cityArea" data-id="2">南加州</td>
+                    <td>
+                        {{#compare cityId 2}}
+                        <div><image src="../assets/img/correct-symbol.png"></image></image></div>
+                        {{/compare}}
+                    </td>
+                </tr>
+                <tr data-id="3"><td id="3_cityArea" class="cityArea" data-id="3">北加州</td>
+                    <td>
+                        {{#compare cityId 3}}
+                        <div><image src="../assets/img/correct-symbol.png"></image></image></div>
+                        {{/compare}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</block>

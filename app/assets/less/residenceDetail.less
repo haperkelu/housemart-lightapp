@@ -1,0 +1,63 @@
+@import "../../../bower_components/bootstrap/less/variables.less";
+@import "../../../bower_components/bootstrap/less/mixins.less";
+@import "base.less";
+
+#residence-onsell-detail {
+	
+	.sub {
+		padding: 5px 12px;
+	}
+
+	.content {
+		position: absolute;
+		width: 100%;
+		top: @banner-header-height;
+		bottom: 0px;
+		overflow: auto;
+
+
+		#residence-detail-images {
+			img {
+				display: block;
+				height: 150px;
+				width: 100%;
+                background:url('/assets/img/default_cover_large.png') no-repeat top left;
+                background-size: 100% 100%;
+			}
+		}
+
+		.details {
+			margin: 3px 0px;
+			.detail {
+				span.prop {
+					display: inline-block;
+					width: 65px;
+				}
+			}
+		}
+
+		.sketch {
+			position: relative;
+			overflow: hidden;
+			padding: 0px 12px;
+			.title {
+				position: absolute;
+				width: 70px;
+                font-size: 13px;
+                color: #555555;
+			}
+
+			.info {
+				margin-left: 70px;
+			}
+		}
+
+		.statistics {
+			p {
+				margin: 0px 0px 3px;
+			}
+			padding: 2px 8px 8px;
+			background: @gray-dark;
+		}
+	}
+}
