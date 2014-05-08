@@ -11,6 +11,7 @@ App.houseDetail = sumeru.controller.create(function(env, session, param) {
     var saleRent = param['saleRent'];
     var hasToast = false;
     var clientUId = '';
+    var cityId = 0;
 
 	var getDetails = function() {
         clientUId = Library.utils.getClientId();
@@ -22,6 +23,7 @@ App.houseDetail = sumeru.controller.create(function(env, session, param) {
 
 		session.houseDetailCollection = env.subscribe('pubhouseDetail', args, function(houseDetailCollection) {
 			var data = houseDetailCollection.find()[0]['data'];
+            cityId = data.cityId;
             hasToast = Library.utils.toast(houseDetailCollection.find()[0]['code'], houseDetailCollection.find()[0]['msg'], hasToast);  
     
             var picStr = JSON.stringify(data['picURLWithSize']);
@@ -80,7 +82,9 @@ App.houseDetail = sumeru.controller.create(function(env, session, param) {
                 setTimeout("$('.back img').attr('src', '../assets/img/reback_icon.png')", 500);
                 if (history.length > 1){
                     history.back();
-                }else{
+                }else if(cityId == 2 || cityId ==3){
+                    env.redirect('/overseaResidenceList',{},false);
+                } else {
                     env.redirect('/mapSell',{},false);
                 }
 			});
