@@ -1,5 +1,5 @@
 CACHE MANIFEST 
-#version:1399543435966
+#version:1399552843743
 CACHE:
 sumeru.css
 sumeru.js
@@ -16,7 +16,6 @@ app.js
 /view/itworks.html
 /view/mapSell.html
 /view/overseaCitySelection.html
-/view/overseaRegionSelection.html
 /view/overseaResidenceList.html
 /view/picShow.html
 /view/regionSelection.html

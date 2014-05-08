@@ -9,7 +9,6 @@ sumeru.packages(
     'enquiryHistory.js',
     'picShow.js',
 	'overseaResidenceList.js',
-    'overseaCitySelection.js',
-    'overseaRegionSelection.js'
+    'overseaCitySelection.js'
 )
 

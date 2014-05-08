@@ -208,12 +208,18 @@ App.overseaFetch = sumeru.controller.create(function(env, session){
 
         setInterval(function() {
             //console.log('wait timeout......');
-            if(typeof cityId == 'undefined' || typeof regionId == 'undefined' || typeof plateId == 'undefined'){
-
-            } else {
+            if(typeof cityId != 'undefined' && typeof regionId != 'undefined' && typeof plateId != 'undefined'){
                 selectionFunctionSet.regionAndPlateTemplateFunction(cityId, regionId, 'region');
                 selectionFunctionSet.regionAndPlateTemplateFunction(regionId, plateId, 'plate');
             }
+
+            document.getElementById('mainContentOverseaResidence').style.height = (document.body.clientHeight - 70).toString() + 'px';
+            $(document).on('click', '.residence-wrap', function() {
+                //console.log('click residence');
+                var url = '/houseList?residenceId=' + $(this).attr('data-id') + '&saleRent=sale&residenceName=' + $(this).attr('data-name')
+                    + '&saleCount=' + $(this).attr('data-sale');
+                window.location.href = url;
+            });
         }, 100);
 
 

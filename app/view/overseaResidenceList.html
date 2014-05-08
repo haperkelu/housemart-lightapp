@@ -198,21 +198,20 @@
     </div>
 </block>
 <script>
-
+    /**
     $(document).ready(function(){
+        console.log('begin resize function');
         var resize = function() {
-           document.getElementById('mainContentOverseaResidence').style.height = (document.body.clientHeight - 70).toString() + 'px';
-        };
-
-        setTimeout(function() {
+            document.getElementById('mainContentOverseaResidence').style.height = (document.body.clientHeight - 70).toString() + 'px';
             $(document).on('click', '.residence-wrap', function() {
                 console.log('click residence');
                 var url = '/houseList?residenceId=' + $(this).attr('data-id') + '&saleRent=sale&residenceName=' + $(this).attr('data-name')
                         + '&saleCount=' + $(this).attr('data-sale');
                 window.location.href = url;
             });
-            setInterval(resize, 1000);
-        }, 1000);
+        };
+        setInterval(resize, 1000);
     });
+    **/
 
 </script>
