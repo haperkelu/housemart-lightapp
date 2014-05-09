@@ -9,12 +9,17 @@ sumeru.router.add(
 //global variable and initialize
 var host = sumeru.config.get("dataServerHost");
 var appCode = 'baiduClient';
+var defaultMap = {
+    2:{name: '南加州',enName:'southCA',cityId:2,regionId:619,plateId:656},
+    3:{name: '北加州', enName:'northCA',cityId:3,regionId:624,plateId:653}
+};
 var cityId = 2;
-var regionId = 619;
-var plateId = 656;
+var regionId = defaultMap[cityId].regionId;
+var plateId = defaultMap[cityId].plateId;;
 var pageNo = 1;
 var pageSize = 35;
 var count = 0;
+var viewHeaderData = {};
 var viewBizData = {};
 
 App.overseaFetch = sumeru.controller.create(function(env, session){
@@ -22,10 +27,8 @@ App.overseaFetch = sumeru.controller.create(function(env, session){
     (function(){
         if(session.get('cityId') != null){
             cityId = parseInt(session.get('cityId'));
-            if(cityId == 3){
-                regionId = 621;
-                plateId = 639;
-            }
+            regionId = defaultMap[cityId].regionId;
+            plateId = defaultMap[cityId].plateId;
         }
         if(session.get('regionId') != null){
             regionId = parseInt(session.get('regionId'));
@@ -36,54 +39,66 @@ App.overseaFetch = sumeru.controller.create(function(env, session){
     })();
 
     var loadPublishedData = function() {
-        env.subscribe("pubOverseaResidenceList", cityId, regionId, plateId, pageNo, 2 * pageSize, function(list){
 
-            viewBizData.data = list.find()[0]['data'];
-            viewBizData.count = list.find()[0].length;
+        var theOtherCity = (cityId == 2? defaultMap[3]: defaultMap[2]);
+        var currentRegionSetOnce = false;
+        var currentHeaderSetOnce = false;
+        var theOtherRegionSetOnce = false;
 
-        });
+        viewHeaderData.cityId = cityId;
+        viewHeaderData.cityName = defaultMap[cityId]['name'];
+        viewHeaderData.regionId = regionId;
+        viewHeaderData.plateId = plateId;
+        viewHeaderData.pageTitle = '美国房产';
+        session.bind('titleHeader', viewHeaderData);
+        session.bind('overSeaResidenceHeader', viewHeaderData);
 
-        env.subscribe("pubAllLocationList", 2, function(list) {
-            var resolved = list.find()[0]['data'];
-            for(var index in resolved){
-                if(resolved[index].regionId == 615) {
-                    viewBizData.southCA = resolved;
-                }
-            }
-        });
-        env.subscribe("pubAllLocationList", 3, function(list) {
-            var resolved = list.find()[0]['data'];
-            for(var index in resolved){
-                if(resolved[index].regionId == 621) {
-                    viewBizData.northCA = resolved;
-                }
-            }
-        });
         env.subscribe("pubAllLocationList", cityId, function(list){
+
             var locationSet = list.find()[0]['data'];
 
-            viewBizData.locationSet = locationSet;
             for(var regionKey in locationSet){
+
                 var tempLocation = locationSet[regionKey];
-                if(tempLocation.regionId == regionId){
-                    viewBizData.regionName = tempLocation.regionName;
-                    for(plateKey in tempLocation.plateList){
+                if(!currentRegionSetOnce && tempLocation.regionId == defaultMap[cityId]['regionId']){
+                    viewBizData[defaultMap[cityId]['enName']] = locationSet;
+                    currentRegionSetOnce = !currentRegionSetOnce;
+                }
+
+                if(!currentHeaderSetOnce && tempLocation.regionId == regionId){
+                    viewHeaderData.regionName = tempLocation.regionName;
+                    for(var plateKey in tempLocation.plateList){
                         if(tempLocation.plateList[plateKey].id == plateId){
-                            viewBizData.plateId =
-                            viewBizData.plateName = tempLocation.plateList[plateKey].name;
+                            viewHeaderData.plateName = tempLocation.plateList[plateKey].name;
                             break;
                         }
                     }
+                    currentHeaderSetOnce = !currentHeaderSetOnce;
                     break;
                 }
             }
-            viewBizData.cityId = cityId;
-            viewBizData.regionId = regionId;
-            viewBizData.plateId = plateId;
-            viewBizData.cityName = (cityId == 2) ? '南加州': '北加州';
+            session.bind('overSeaResidenceSubHeader', viewHeaderData);
+        });
 
+        env.subscribe("pubOverseaResidenceList", cityId, regionId, plateId, pageNo, pageSize, function(list){
+            viewBizData.data = list.find()[0]['data'];
+            viewBizData.count = list.find()[0].length;
+        });
+
+        env.subscribe("pubAllLocationList", theOtherCity.cityId, function(list) {
+
+            var locationSet = list.find()[0]['data'];
+            for(var regionKey in locationSet) {
+                var tempLocation = locationSet[regionKey];
+                if(!theOtherRegionSetOnce && tempLocation.regionId == theOtherCity['regionId']){
+                    viewBizData[theOtherCity['enName']] = locationSet;
+                    theOtherRegionSetOnce = !theOtherRegionSetOnce;
+                    break;
+                }
+            }
             session.bind('overSeaResidenceContainer', viewBizData);
         });
+
     }
 
     env.onload = function() {
@@ -172,6 +187,7 @@ App.overseaFetch = sumeru.controller.create(function(env, session){
             ,
             toggleRegionAndOption: function(tag) {
                 $('#positionPanel').css('display', (tag == 1)? '': 'none');
+                $('#cancelPanel').css('display', (tag == 1)? '': 'none');
                 $('#optionPanel').css('display', (tag == 1)? 'none': '');
             }
 
@@ -206,14 +222,30 @@ App.overseaFetch = sumeru.controller.create(function(env, session){
             selectionFunctionSet.toggleRegionAndOption(1);
         });
 
+        //$('#mainContentOverseaResidence loadingDiv').css('display','block');
         setInterval(function() {
             //console.log('wait timeout......');
+
             if(typeof cityId != 'undefined' && typeof regionId != 'undefined' && typeof plateId != 'undefined'){
                 selectionFunctionSet.regionAndPlateTemplateFunction(cityId, regionId, 'region');
                 selectionFunctionSet.regionAndPlateTemplateFunction(regionId, plateId, 'plate');
             }
 
-            document.getElementById('mainContentOverseaResidence').style.height = (document.body.clientHeight - 70).toString() + 'px';
+            //console.log('height:' + document.getElementById('mainContentOverseaResidence').style.height);
+            //console.log(document.getElementById('mainContentOverseaResidence').style.height == '');
+            //console.log($('#mainContentOverseaResidence'));
+
+            if(document.getElementById('mainContentOverseaResidence').style.height == ''){
+                document.getElementById('mainContentOverseaResidence').style.height = (document.body.clientHeight - 70).toString() + 'px';
+                //console.log(document.getElementById('mainContentOverseaResidence').style.height);
+            }
+
+            /**
+            if(document.getElementById('optionPanel') != null){
+                document.getElementById('loadingDiv').style.display = 'none';
+            }
+            **/
+
             $(document).on('click', '.residence-wrap', function() {
                 //console.log('click residence');
                 var url = '/houseList?residenceId=' + $(this).attr('data-id') + '&saleRent=sale&residenceName=' + $(this).attr('data-name')

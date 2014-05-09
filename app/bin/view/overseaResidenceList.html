@@ -1,108 +1,34 @@
-<block tpl-id="overSeaResidenceContainer">
-
-    <script>
-        var cityId = {{cityId}};
-        var regionId = {{regionId}};
-        var plateId = {{plateId}};
-    </script>
-    <div id="map-sell-banner" class='banner'>
-        <div class="header">
-            <img src="../assets/img/icon.png" alt="好识买"/>
-            <div id="haoshimai">好识买</div>
+<div class='loadingDiv'>
+    <img src="../assets/img/loading.gif"/>
+</div>
+<link rel="stylesheet" href="../assets/css/overseaResidence.css" type="text/css" />
+<block tpl-id="titleHeader">{{$ document.title=pageTitle}}</block>
+<div id="map-sell-banner" class='banner'>
+    <div class="header">
+        <img src="../assets/img/icon.png" alt="好识买"/>
+        <div id="haoshimai">好识买</div>
+        <block tpl-id="overSeaResidenceHeader">
+            <script>
+                var cityId = {{cityId}};
+                var regionId = {{regionId}};
+                var plateId = {{plateId}};
+            </script>
             <div id="area"><a href="/overseaCitySelection" data-id="{{cityId}}">{{cityName}}</a></div>
-            <div>美国房产</div>
-        </div>
+        </block>
+        <div>美国房产</div>
+    </div>
+    <block tpl-id="overSeaResidenceSubHeader">
         <div class="sub">
             <ul>
                 <li style="width: 100%;text-align: center">{{cityName}} &nbsp; {{regionName}} &nbsp; {{plateName}}</li>
             </ul>
         </div>
-    </div>
+    </block>
+</div>
 
-    
-    
-    <style>
-        #mainContentOverseaResidence {
-            position: fixed;
-            top:65px;
-            width:100%;
-            overflow: auto;
-            background-color: #494c56;
-            padding:5px;
-        }
-        
-        #mainContentOverseaResidence .residence{
-            cursor: pointer;
-        }
-        .sort_bar {
-            text-align:center;
-            position: fixed;
-            bottom: 0px;
-            width:100%;
-            padding:10px 0px;
-            cursor:pointer;
-            background-repeat: no-repeat;
-            background-position: center;
-            font-size: 20px;
-            z-index: 5000;
-        }
 
-        .sort_bar a {
-            color: #ffffff;
-        }
-
-        #positionPanel {
-            width: 100%;
-            height: 160px;
-            overflow:scroll;
-        }
-
-        #positionPanel table {
-            width: 100%;
-        }
-
-        #positionPanel td {
-            font-size: 15px;
-            padding:10px 0px;
-            vertical-align: top;
-        }
-
-        #positionPanel .click {
-            cursor: pointer;
-        }
-
-        #regionList {
-            width: 45%;
-            background-color: #f2f2fe;
-        }
-
-        #regionList .highlight {
-            background: #ffffff;
-        }
-
-        #plateList {
-            width: 45%;
-            background-color: #ffffff;
-        }
-
-        #plateList .highlight {
-            color: blue;
-        }
-
-        #cancelPanel {
-            position: fixed;
-            height: 20px;
-            right: 1px;
-            bottom: 180px;
-        }
-
-        #optionPanel {
-            background: rgba(0,0,0,.6);
-        }
-
-    </style>
+<block tpl-id="overSeaResidenceContainer">
     <div id="mainContentOverseaResidence">
-
         {{#each data}}
         <div class='residence-wrap' data-id="{{this.residenceId}}" data-name="{{this.residenceName}}" data-sale="{{this.onSaleCount}}" data-rent="{{this.onRentCount}}">
             <div class='residence'>
@@ -124,14 +50,12 @@
         </div>
         {{/each}}
     </div>
-    <div class="sort_bar">
 
+    <div id="cancelPanel" class="click" style="display: none"><img src="../assets/img/cha.png"></div>
+    <div class="sort_bar">
         <div id="positionPanel" style="display: none">
-            <div id="cancelPanel" class="click"><img src="../assets/img/cha.png"></div>
             <table align="center">
-                
                 <tr>
-                    
                     <td id="regionList">
                         <div parent-data-id="2">
                             {{#each southCA}}
@@ -169,30 +93,11 @@
                 </tr>
             </table>
         </div>
-
         <div id="optionPanel">
             <span id="positionSelection" style="color:#ffffff; padding-right: 35px;cursor: pointer">地点</span>|
             <span style="padding: 0px 35px;"><a href="/enquiryHistory?">问询</a></span>|
             <span style="padding-left:35px;"><a href="/residenceSearch?saleRent=sale">搜索</a></span>
         </div>
     </div>
+    {{$ Library.utils.changeElClass($('.loadingDiv'));}}
 </block>
-<script>
-
-    $(document).ready(function(){
-        var resize = function() {
-           document.getElementById('mainContentOverseaResidence').style.height = (document.body.clientHeight - 70).toString() + 'px';
-        };
-
-        setTimeout(function() {
-            $(document).on('click', '.residence-wrap', function() {
-                console.log('click residence');
-                var url = '/houseList?residenceId=' + $(this).attr('data-id') + '&saleRent=sale&residenceName=' + $(this).attr('data-name')
-                        + '&saleCount=' + $(this).attr('data-sale');
-                window.location.href = url;
-            });
-            setInterval(resize, 1000);
-        }, 1000);
-    });
-
-</script>
