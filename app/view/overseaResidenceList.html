@@ -1,0 +1,103 @@
+<div class='loadingDiv'>
+    <img src="../assets/img/loading.gif"/>
+</div>
+<link rel="stylesheet" href="../assets/css/overseaResidence.css" type="text/css" />
+<block tpl-id="titleHeader">{{$ document.title=pageTitle}}</block>
+<div id="map-sell-banner" class='banner'>
+    <div class="header">
+        <img src="../assets/img/icon.png" alt="好识买"/>
+        <div id="haoshimai">好识买</div>
+        <block tpl-id="overSeaResidenceHeader">
+            <script>
+                var cityId = {{cityId}};
+                var regionId = {{regionId}};
+                var plateId = {{plateId}};
+            </script>
+            <div id="area"><a href="/overseaCitySelection" data-id="{{cityId}}">{{cityName}}</a></div>
+        </block>
+        <div>美国房产</div>
+    </div>
+    <block tpl-id="overSeaResidenceSubHeader">
+        <div class="sub">
+            <ul>
+                <li style="width: 100%;text-align: center">{{cityName}} &nbsp; {{regionName}} &nbsp; {{plateName}}</li>
+            </ul>
+        </div>
+    </block>
+</div>
+
+
+<block tpl-id="overSeaResidenceContainer">
+    <div id="mainContentOverseaResidence">
+        {{#each data}}
+        <div class='residence-wrap' data-id="{{this.residenceId}}" data-name="{{this.residenceName}}" data-sale="{{this.onSaleCount}}" data-rent="{{this.onRentCount}}">
+            <div class='residence'>
+                <img src="{{this.picURL.[0]}}"/>
+                <div class='info'>
+                    <div class="details">
+                        <span class="highlight">{{this.residenceName}}</span>
+                    </div>
+                    <div class="details">
+                        <span class="detail" style="width:100%">均价: <span class=""> {{this.price}}</span></span>
+                    </div>
+                    <div class='details last'>
+                    <span class="detail">
+                        在售: {{this.onSaleCount}}
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <div id="cancelPanel" class="click" style="display: none"><img src="../assets/img/cha.png"></div>
+    <div class="sort_bar">
+        <div id="positionPanel" style="display: none">
+            <table align="center">
+                <tr>
+                    <td id="regionList">
+                        <div parent-data-id="2">
+                            {{#each southCA}}
+                                <div data-id="{{this.regionId}}" class="click">{{this.regionName}}</div>
+                            {{/each}}
+                        </div>
+
+                        <div parent-data-id="3">
+                            {{#each northCA}}
+                            <div data-id="{{this.regionId}}" class="click">{{this.regionName}}</div>
+                            {{/each}}
+                        </div>
+                    </td>
+
+                    <td id="plateList">
+                        <div parent-data-id="0"><div data-id="0" class="click">全部</div></div>
+                        {{#each southCA}}
+                        <div parent-data-id="{{this.regionId}}">
+                            <div data-id="0" class="click">全部</div>
+                            {{#each this.plateList}}
+                            <div data-id="{{this.id}}" class="click">{{this.name}}</div>
+                            {{/each}}
+                        </div>
+                        {{/each}}
+
+                        {{#each northCA}}
+                        <div parent-data-id="{{this.regionId}}">
+                            <div data-id="0" class="click">全部</div>
+                            {{#each this.plateList}}
+                            <div data-id="{{this.id}}" class="click">{{this.name}}</div>
+                            {{/each}}
+                        </div>
+                        {{/each}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="optionPanel">
+            <span id="positionSelection" style="color:#ffffff; padding-right: 35px;cursor: pointer">地点</span>|
+            <span style="padding: 0px 35px;"><a href="/enquiryHistory?">问询</a></span>|
+            <span style="padding-left:35px;"><a href="/residenceSearch?saleRent=sale">搜索</a></span>
+        </div>
+    </div>
+    {{$ Library.utils.changeElClass($('.loadingDiv'));}}
+</block>
