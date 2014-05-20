@@ -101,3 +101,11 @@
     </div>
     {{$ Library.utils.changeElClass($('.loadingDiv'));}}
 </block>
+<script>
+    $(document).ready(function() {
+        var newScript = document.createElement('script');
+        newScript.setAttribute("type","text/javascript");
+        newScript.innerHTML = 'window.bd && bd._qdc && bd._qdc.init({app_id: \'5af6c84eeb33274327c0d31d\'});';
+        document.getElementsByTagName("head")[0].appendChild(newScript);
+    });
+</script>
